@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications — MBA Partner</title>
+  <meta name="description" content="Advanced Excel, Power BI, and SQL certification programs for MBA students. Add verifiable technical proficiency to your CV in 4 weeks. Graded assessments, not just participation certificates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .offering-hero{padding:120px 0 80px;background:var(--bg-main)}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);margin-bottom:24px}
+    .breadcrumb a{color:var(--slate);transition:color var(--transition)}.breadcrumb a:hover{color:var(--navy)}.breadcrumb-sep{color:var(--hairline)}
+    .hero-intro{max-width:740px}
+    .offering-sub{font-size:18px;color:var(--slate);line-height:1.6;margin-bottom:32px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+    .cert-cards-section{background:var(--bg-panel)}
+    .cert-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .cert-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:36px;display:flex;flex-direction:column}
+    .cert-card-letter{font-size:48px;font-weight:600;color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:16px}
+    .cert-card-title{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.2}
+    .cert-card-sub{font-size:14px;color:var(--slate);margin-bottom:20px;line-height:1.6}
+    .cert-card-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;flex:1}
+    .cert-card-feature{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--navy-body);line-height:1.5}
+    .cert-card-feature::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+    .cert-card-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+    .cert-card-price{font-size:28px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums}
+    .cert-card-duration{font-size:13px;color:var(--slate)}
+    .cert-card-cta{width:100%}
+
+    .why-certs-section{background:var(--bg-main)}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .why-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px}
+    .why-label{font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+    .why-heading{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
+    .why-desc{font-size:14px;color:var(--slate);line-height:1.6}
+
+    .bundle-section{background:var(--bg-panel)}
+    .bundle-card{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--yellow);border-radius:var(--radius-card);padding:40px;text-align:center}
+    .bundle-headline{font-size:28px;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .bundle-sub{font-size:16px;color:var(--slate);margin-bottom:24px}
+    .bundle-price-row{display:flex;align-items:baseline;gap:12px;justify-content:center;margin-bottom:6px}
+    .bundle-price{font-size:40px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums}
+    .bundle-price-original{font-size:18px;color:var(--slate);text-decoration:line-through}
+    .bundle-label{font-size:13px;color:var(--slate);margin-bottom:24px}
+    .bundle-features{display:flex;flex-direction:column;gap:8px;text-align:left;margin-bottom:28px}
+    .bundle-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5}
+    .bundle-feature::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+    .bundle-cta-row{display:flex;flex-direction:column;gap:12px}
+
+    @media(max-width:900px){
+      .offering-hero{padding:100px 0 60px}
+      .cert-cards-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .hero-ctas{flex-direction:column}
+      .hero-ctas .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header id="nav" class="solid" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MBA Partner home"><span class="nav-wordmark">MBA Partner</span><span class="nav-tagline">Initiative by Alumni of Old IIM</span></a>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html#programs">Programs</a></li><li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('Certifications')" aria-haspopup="dialog">Enroll Now</button>
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="offering-hero" aria-labelledby="offering-h1">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Programs</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Certifications</span>
+        </nav>
+        <div class="hero-intro">
+          <div style="margin-bottom:16px;"><span class="tag-category">Certifications</span></div>
+          <h1 class="h1" id="offering-h1" style="color:var(--navy);margin-bottom:16px;">Technical Proficiency That Shows Up on Your CV — <span class="text-purple">and Holds Up in the Interview.</span></h1>
+          <p class="offering-sub">Advanced Excel, Power BI, and SQL certification programs with graded assessments — not participation certificates. The technical skills Finance, Consulting, and Product recruiters increasingly screen for in pre-placement tests and technical rounds.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="openModal('All 3 Certifications Bundle — ₹3,499')" aria-haspopup="dialog">Get All 3 — ₹3,499</button>
+            <button class="btn btn-secondary" onclick="openModal('Single Certification')" aria-haspopup="dialog">Enroll in 1 Certification</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="background:var(--navy);padding:48px 0;" aria-label="Why certifications matter">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+          <div style="padding:28px;border-right:1px solid rgba(255,255,255,0.08)">
+            <div style="width:32px;height:2px;background:var(--yellow);margin-bottom:14px"></div>
+            <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px">Graded Assessment — Not Participation</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">Every certificate is issued on the basis of a scored assessment. The grade is on the certificate. Recruiters can tell the difference between a completion certificate and a verified proficiency certificate.</p>
+          </div>
+          <div style="padding:28px;border-right:1px solid rgba(255,255,255,0.08)">
+            <div style="width:32px;height:2px;background:var(--yellow);margin-bottom:14px"></div>
+            <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px">Live Sessions — Not Pre-Recorded</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">Scheduled cohort sessions with live Q&A. You can ask the instructor why a formula works, not just watch someone type it. The learning speed is faster when you can ask questions in real time.</p>
+          </div>
+          <div style="padding:28px">
+            <div style="width:32px;height:2px;background:var(--yellow);margin-bottom:14px"></div>
+            <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px">4 Weeks Per Certification</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">Designed to be completed in one month alongside your coursework — 3–4 hours per week. You can stack certifications back-to-back or do multiple concurrently if your timeline is tight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cert-cards-section" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Available Certifications</p>
+          <h2 id="certs-heading">Choose Your Certification</h2>
+          <p>Each certification is available standalone at ₹1,499, or get all three for ₹3,499 — saving ₹998.</p>
+        </div>
+        <div class="cert-cards-grid">
+
+          <!-- Advanced Excel -->
+          <div class="cert-card">
+            <div class="cert-card-letter">XL</div>
+            <div class="cert-card-title">Advanced Excel</div>
+            <p class="cert-card-sub">The tool every Finance, Consulting, and Operations recruiter assumes you know — and tests in pre-placement assessments and technical rounds.</p>
+            <ul class="cert-card-features" role="list">
+              <li class="cert-card-feature">Advanced formulas: INDEX-MATCH, XLOOKUP, array functions</li>
+              <li class="cert-card-feature">PivotTables and dynamic dashboards</li>
+              <li class="cert-card-feature">Financial modelling templates (DCF, 3-statement)</li>
+              <li class="cert-card-feature">Data cleaning and Power Query basics</li>
+              <li class="cert-card-feature">Keyboard efficiency and professional formatting</li>
+              <li class="cert-card-feature">Graded assessment + scored certificate</li>
+            </ul>
+            <div class="cert-card-price-row">
+              <span class="cert-card-price">₹1,499</span>
+              <span class="cert-card-duration">· 4 weeks · Live sessions</span>
+            </div>
+            <button class="btn btn-primary cert-card-cta" onclick="openModal('Advanced Excel Certification — ₹1,499')" aria-haspopup="dialog">Enroll in Advanced Excel</button>
+          </div>
+
+          <!-- Power BI -->
+          <div class="cert-card">
+            <div class="cert-card-letter">BI</div>
+            <div class="cert-card-title">Power BI</div>
+            <p class="cert-card-sub">Data visualisation and business intelligence for the Operations, Finance, and Marketing domains where presenting data clearly is as important as analysing it.</p>
+            <ul class="cert-card-features" role="list">
+              <li class="cert-card-feature">Power BI Desktop — reports, dashboards, drill-throughs</li>
+              <li class="cert-card-feature">DAX measures and calculated columns</li>
+              <li class="cert-card-feature">Data modelling and relationships</li>
+              <li class="cert-card-feature">Publishing and sharing with Power BI Service</li>
+              <li class="cert-card-feature">MBA use cases: sales dashboards, supply chain KPIs</li>
+              <li class="cert-card-feature">Graded assessment + scored certificate</li>
+            </ul>
+            <div class="cert-card-price-row">
+              <span class="cert-card-price">₹1,499</span>
+              <span class="cert-card-duration">· 4 weeks · Live sessions</span>
+            </div>
+            <button class="btn btn-primary cert-card-cta" onclick="openModal('Power BI Certification — ₹1,499')" aria-haspopup="dialog">Enroll in Power BI</button>
+          </div>
+
+          <!-- SQL -->
+          <div class="cert-card">
+            <div class="cert-card-letter">SQL</div>
+            <div class="cert-card-title">SQL for Business</div>
+            <p class="cert-card-sub">Increasingly screened in Product Management and Analytics roles — and used daily in Consulting projects when working with client data. Non-technical in depth, practical in focus.</p>
+            <ul class="cert-card-features" role="list">
+              <li class="cert-card-feature">SELECT, JOIN, GROUP BY, subqueries, CTEs</li>
+              <li class="cert-card-feature">Business queries: customer segmentation, funnel analysis</li>
+              <li class="cert-card-feature">Connecting SQL to Excel and BI tools</li>
+              <li class="cert-card-feature">Reading and interpreting query outputs</li>
+              <li class="cert-card-feature">SQL for case interviews (Product + Analytics roles)</li>
+              <li class="cert-card-feature">Graded assessment + scored certificate</li>
+            </ul>
+            <div class="cert-card-price-row">
+              <span class="cert-card-price">₹1,499</span>
+              <span class="cert-card-duration">· 4 weeks · Live sessions</span>
+            </div>
+            <button class="btn btn-primary cert-card-cta" onclick="openModal('SQL for Business Certification — ₹1,499')" aria-haspopup="dialog">Enroll in SQL</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="why-certs-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Why It Matters</p>
+          <h2 id="why-heading">Technical Skills in MBA Placements — What Recruiters Actually Look For</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-label">Finance & Consulting</div>
+            <div class="why-heading">Excel is tested in pre-placement assessments — not just assumed</div>
+            <p class="why-desc">Multiple Finance and Consulting firms run Excel-based pre-placement tests. If you can't do a DCF in a spreadsheet or build a PivotTable under time pressure, you lose points in a round most students don't even prepare for.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-label">Product & Analytics</div>
+            <div class="why-heading">SQL literacy is increasingly listed as a requirement — not a bonus</div>
+            <p class="why-desc">Product Management and Business Analytics roles increasingly screen for basic SQL proficiency. Not because PMs write production queries — but because being able to pull data independently changes what you can do on the job from day one.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-label">Operations & Marketing</div>
+            <div class="why-heading">Power BI transforms how you present analysis in interviews and on the job</div>
+            <p class="why-desc">Operations roles involve dashboards. Marketing roles involve campaign KPI tracking. Walking into an interview knowing Power BI — and having a certificate to show it — is a concrete differentiator most MBA students haven't thought to address.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" aria-labelledby="test-cert-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Student Outcomes</p><h2 id="test-cert-heading">Certification Alumni</h2></div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → KPMG Final Placement</span></div>
+            <blockquote><p class="testimonial-quote">"The Excel certification was worth it for the pre-placement test alone. KPMG ran a 45-minute Excel assessment in round 1. I was the only person in my cohort who'd practised that format specifically."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">M</div><div><div class="testimonial-name">Mihir Joshi</div><div class="testimonial-institution">IIM Indore</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product → Razorpay SIP</span></div>
+            <blockquote><p class="testimonial-quote">"The SQL cert was the one I thought was optional. The Razorpay PM interview included a data question where being able to write a basic query and explain the output was the difference between a yes and a no."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">T</div><div><div class="testimonial-name">Tanvi Reddy</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Operations → Amazon SIP</span></div>
+            <blockquote><p class="testimonial-quote">"Power BI was something I'd mentioned as a skill on my CV without actually being able to build a dashboard from scratch. This made it honest. The certificate was secondary to actually knowing it."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">K</div><div><div class="testimonial-name">Karthik Menon</div><div class="testimonial-institution">XLRI</div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bundle-section" aria-labelledby="bundle-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Bundle Offer</p>
+          <h2 id="bundle-heading">All 3 Certifications — One Cohort Period</h2>
+          <p>Three certifications, running concurrently, at a lower combined price than enrolling in each separately.</p>
+        </div>
+        <div class="bundle-card">
+          <span class="tag-most-chosen" style="margin-bottom:16px;display:inline-block">Best Value</span>
+          <div class="bundle-headline">Excel + Power BI + SQL Bundle</div>
+          <p class="bundle-sub">All 3 certifications in one cohort period</p>
+          <div class="bundle-price-row">
+            <span class="bundle-price">₹3,499</span>
+            <span class="bundle-price-original">₹4,497</span>
+          </div>
+          <p class="bundle-label">Save ₹998 · One-time payment</p>
+          <ul class="bundle-features" role="list">
+            <li class="bundle-feature">Advanced Excel (full program, graded assessment)</li>
+            <li class="bundle-feature">Power BI (full program, graded assessment)</li>
+            <li class="bundle-feature">SQL for Business (full program, graded assessment)</li>
+            <li class="bundle-feature">3 separate scored certificates</li>
+            <li class="bundle-feature">All programs run concurrently — complete all 3 in 4 weeks</li>
+            <li class="bundle-feature">6–8 hours per week total across all three programs</li>
+          </ul>
+          <div class="bundle-cta-row">
+            <button class="btn btn-primary" onclick="openModal('All 3 Certifications Bundle — ₹3,499')" style="width:100%" aria-haspopup="dialog">Enroll in All 3 — ₹3,499</button>
+            <button class="btn btn-secondary" onclick="openModal('Single Certification')" style="width:100%" aria-haspopup="dialog">Enroll in 1 Certification Instead</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" id="faq-cert" aria-labelledby="faq-cert-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Questions</p><h2 id="faq-cert-heading">Certifications — FAQ</h2></div>
+        <div class="faq-grid">
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Are these certifications actually graded or just participation?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Graded — with the score on the certificate. You complete a structured assessment at the end of each 4-week program. The certificate states your score percentile. This is what distinguishes it from online course completion certificates, which list no performance data.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">How much time do these require per week?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">2–3 hours per week per certification, including live session attendance and practice. If you're doing the bundle (all 3), expect 6–8 hours per week total. Sessions are scheduled in the evenings and designed to not conflict with your MBA coursework calendar.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Can I do these certifications alongside another MBA Partner program?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Yes. Certifications are designed to be stackable alongside other programs. Many students do Advanced Excel while completing their Live Project, or do the SQL certification while in the Bootcamp. The scheduling is built to allow this.</div></div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Do I need prior technical knowledge for SQL or Power BI?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">No. All three certifications start from the assumption that you've never used the tool professionally. SQL for Business specifically is framed for non-engineers — the goal is business literacy with the tool, not software engineering proficiency. If you know Excel basics, you're qualified to start Advanced Excel.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Which certification should I prioritise?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Finance and Consulting: Advanced Excel first. Product and Analytics: SQL first. Marketing and Operations: Power BI first. If you can only do one, match it to your primary domain. If you can do all three, the bundle running concurrently is the most time-efficient approach.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Should I do certifications or the All-In-One Combo?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">These solve different gaps. The All-In-One Combo closes the Live Project CV gap, interview prep gap, and case prep gap. Certifications close the technical skills gap. Many students do both — the Bootcamp or All-In-One Combo, plus certifications running in parallel. If budget is a constraint, certifications alone are the lowest-cost entry point.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" aria-labelledby="related-cert-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Also Available</p><h2 id="related-cert-heading">Related Programs</h2></div>
+        <div class="related-grid">
+          <a href="offering-all-in-one.html" class="related-card"><span class="tag-category">All-In-One Combo</span><div class="related-card-name">The Complete Placement Stack</div><p class="related-card-desc">Bootcamp + Live Project + Case Competition prep — the three credentials most students assemble separately at a higher cost.</p><span class="related-card-price">₹14,999</span></a>
+          <a href="offering-bootcamp.html" class="related-card"><span class="tag-category">Bootcamp</span><div class="related-card-name">Placements Bootcamp</div><p class="related-card-desc">Structured interview prep across 5 domains. Pairs well with certifications if you're also working on interview readiness.</p><span class="related-card-price">₹7,999</span></a>
+          <a href="offering-live-project.html" class="related-card"><span class="tag-category">Live Project</span><div class="related-card-name">Live Projects</div><p class="related-card-desc">Close the CV output gap — a verifiable real client project in your domain. The most common gap in first-year MBA CVs.</p><span class="related-card-price">₹4,999</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--navy);padding:80px 0;text-align:center;" aria-labelledby="final-cta-cert">
+      <div class="container">
+        <p class="eyebrow" style="color:var(--yellow)">Get Certified</p>
+        <h2 id="final-cta-cert" style="font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--white);margin:16px auto;max-width:560px;line-height:1.2">Technical Skills That Actually Show Up on the Certificate.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:36px">Graded. Scored. Verifiable. 4 weeks per certification.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="openModal('All 3 Certifications Bundle — ₹3,499')" aria-haspopup="dialog">Get All 3 — ₹3,499</button>
+          <button class="btn btn-secondary-light" onclick="openModal('Single Certification')" aria-haspopup="dialog">Enroll in 1 Certification</button>
+        </div>
+        <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.3)">Advanced Excel · Power BI · SQL for Business</p>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="nav-wordmark">MBA Partner</div><p>Post-admission, pre-placement career acceleration for current MBA students.</p><div class="footer-social"><a href="#" class="social-link" aria-label="WhatsApp">W</a><a href="#" class="social-link" aria-label="Telegram">T</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Instagram">ig</a></div></div>
+        <div class="footer-col"><h4>Programs</h4><ul><li><a href="offering-all-in-one.html">All-In-One Combo</a></li><li><a href="offering-bootcamp.html">Placements Bootcamp</a></li><li><a href="offering-live-project.html">Live Projects</a></li><li><a href="offering-case-comp.html">Case Competition</a></li><li><a href="offering-certifications.html">Certifications</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#mentors">Mentors</a></li><li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li><li><a href="#">WhatsApp Community</a></li><li><a href="#">Telegram Channel</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
+    </div>
+  </footer>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('All 3 Certifications — ₹3,499')" style="width:100%">Get All 3 Certs — ₹3,499</button></div>
+
+  <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Certifications</p>
+      <form class="modal-form" id="enroll-form" novalidate>
+        <div class="form-group"><label class="form-label" for="modal-name">Full Name</label><input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" /></div>
+        <div class="form-group"><label class="form-label" for="modal-email">Email Address</label><input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" /></div>
+        <div class="form-group"><label class="form-label" for="modal-phone">WhatsApp Number</label><input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" /></div>
+        <div class="form-group"><label class="form-label" for="modal-bschool">B-School</label><input class="form-input" type="text" id="modal-bschool" name="bschool" placeholder="IIM Ahmedabad, FMS Delhi, etc." required /></div>
+        <div class="form-group"><label class="form-label" for="modal-cert">Certification Interest</label>
+          <select class="form-select" id="modal-cert" name="cert">
+            <option value="">Select certification(s)</option>
+            <option>All 3 Certifications Bundle — ₹3,499</option>
+            <option>Advanced Excel Only — ₹1,499</option>
+            <option>Power BI Only — ₹1,499</option>
+            <option>SQL for Business Only — ₹1,499</option>
+          </select>
+        </div>
+        <button type="submit" class="modal-submit">Reserve My Spot →</button>
+        <p class="modal-note">Our team will reach you on WhatsApp within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+  <script>
+    const mo=document.getElementById('enroll-modal'),mcb2=document.getElementById('modal-close-btn'),mol=document.getElementById('modal-offering-label'),ef=document.getElementById('enroll-form');
+    function openModal(n){mol.textContent=n||'Certifications';mo.classList.add('open');mo.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>mcb2.focus(),50);}
+    function closeModal(){mo.classList.remove('open');mo.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    mcb2.addEventListener('click',closeModal);mo.addEventListener('click',(e)=>{if(e.target===mo)closeModal();});document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mo.classList.contains('open'))closeModal();});
+    ef.addEventListener('submit',(e)=>{e.preventDefault();const name=document.getElementById('modal-name').value.trim(),phone=document.getElementById('modal-phone').value.trim(),offering=mol.textContent,msg=encodeURIComponent(`Hi, I'm ${name} and I'd like to enroll in: ${offering}. My WhatsApp: ${phone}`);window.open(`https://wa.me/919999999999?text=${msg}`,'_blank');closeModal();});
+    const mt=document.getElementById('mobile-toggle'),nl=document.getElementById('nav-links');mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+    const mcbar=document.getElementById('mobile-cta-bar');window.addEventListener('scroll',()=>{if(window.scrollY>400)mcbar.classList.add('visible');else mcbar.classList.remove('visible');},{passive:true});
+    document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');item.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);});});
+    const pref=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!pref){const s=document.createElement('style');s.textContent=`.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`;document.head.appendChild(s);const els=document.querySelectorAll('.cert-card,.why-card,.testimonial-card,.related-card');els.forEach(el=>el.classList.add('reveal'));const obs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.1});els.forEach(el=>obs.observe(el));}
+  </script>
+</body>
+</html>

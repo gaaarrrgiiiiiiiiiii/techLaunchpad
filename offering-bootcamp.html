@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placements Bootcamp — MBA Partner</title>
+  <meta name="description" content="Structured SIP and Final Placement interview preparation across Finance, Consulting, Product, Marketing, and Strategy with 1:1 mentor mock interviews. MBA Partner." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .offering-hero { padding: 120px 0 80px; background: var(--bg-main); }
+    .breadcrumb { display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);margin-bottom:24px; }
+    .breadcrumb a { color:var(--slate);transition:color var(--transition); }
+    .breadcrumb a:hover { color:var(--navy); }
+    .breadcrumb-sep { color:var(--hairline); }
+    .offering-hero-grid { display:grid;grid-template-columns:58fr 42fr;gap:64px;align-items:start; }
+    .offering-sub { font-size:18px;color:var(--slate);line-height:1.6;margin-bottom:32px; }
+    .offering-hero-ctas { display:flex;gap:12px;flex-wrap:wrap; }
+    .enroll-panel { background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px;position:sticky;top:88px; }
+    .enroll-price-row { display:flex;align-items:baseline;gap:10px;margin-bottom:6px; }
+    .enroll-price { font-size:36px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums; }
+    .enroll-price-label { font-size:13px;color:var(--slate);margin-bottom:20px; }
+    .enroll-divider { border:none;border-top:1px solid var(--hairline);margin:20px 0; }
+    .enroll-checklist { display:flex;flex-direction:column;gap:10px;margin-bottom:24px; }
+    .enroll-check-item { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5; }
+    .enroll-check-item::before { content:'✓';color:var(--success);font-weight:700;flex-shrink:0;margin-top:1px; }
+    .enroll-cta { width:100%;margin-bottom:12px; }
+    .enroll-secondary { width:100%; }
+    .enroll-note { font-size:12px;color:var(--slate);text-align:center;margin-top:12px;line-height:1.5; }
+
+    .outcomes-band { background:var(--navy);padding:64px 0; }
+    .outcomes-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:0; }
+    .outcome-tile { padding:32px 28px;border-right:1px solid rgba(255,255,255,0.08); }
+    .outcome-tile:last-child { border-right:none; }
+    .outcome-tile::before { content:'';display:block;width:32px;height:2px;background:var(--yellow);margin-bottom:16px; }
+    .outcome-tile-title { font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.3; }
+    .outcome-tile-desc { font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6; }
+
+    .domains-section { background:var(--bg-panel); }
+    .domains-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:16px; }
+    .domain-card { background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:24px 20px;text-align:center; }
+    .domain-icon { font-size:28px;font-weight:600;color:var(--yellow);margin-bottom:12px; }
+    .domain-name { font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px; }
+    .domain-desc { font-size:12px;color:var(--slate);line-height:1.5; }
+
+    .modules-section { background:var(--bg-main); }
+    .modules-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+    .module-card { background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px; }
+    .module-number { font-size:14px;font-weight:600;color:var(--yellow);margin-bottom:12px;letter-spacing:0.08em; }
+    .module-name { font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3; }
+    .module-desc { font-size:14px;color:var(--slate);line-height:1.6; }
+    .module-duration { display:inline-block;font-size:12px;font-weight:600;color:var(--slate);margin-top:16px;letter-spacing:0.04em; }
+
+    .ideal-section { background:var(--bg-panel); }
+    .ideal-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+    .ideal-card { background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px; }
+    .ideal-label { font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px; }
+    .ideal-statement { font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic; }
+    .ideal-desc { font-size:14px;color:var(--slate);line-height:1.6; }
+
+    .pricing-section { background:var(--bg-main); }
+    .pricing-card { max-width:600px;margin:0 auto;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:40px;text-align:center; }
+    .pricing-headline { font-size:28px;font-weight:600;color:var(--navy);margin-bottom:8px; }
+    .pricing-sub { font-size:16px;color:var(--slate);margin-bottom:24px; }
+    .pricing-amount-row { display:flex;align-items:baseline;gap:12px;justify-content:center;margin-bottom:6px; }
+    .pricing-amount { font-size:48px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums; }
+    .pricing-label { font-size:13px;color:var(--slate);margin-bottom:28px; }
+    .pricing-features { display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:28px; }
+    .pricing-feature-item { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5; }
+    .pricing-feature-item::before { content:'✓';color:var(--success);font-weight:700;flex-shrink:0; }
+    .pricing-cta-row { display:flex;flex-direction:column;gap:12px; }
+
+    @media (max-width:900px) {
+      .offering-hero { padding:100px 0 60px; }
+      .offering-hero-grid { grid-template-columns:1fr;gap:40px; }
+      .enroll-panel { position:static; }
+      .outcomes-grid { grid-template-columns:1fr; }
+      .outcome-tile { border-right:none;border-bottom:1px solid rgba(255,255,255,0.08); }
+      .outcome-tile:last-child { border-bottom:none; }
+      .domains-grid { grid-template-columns:repeat(2,1fr); }
+      .modules-grid { grid-template-columns:1fr; }
+      .ideal-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) {
+      .offering-hero-ctas { flex-direction:column; }
+      .offering-hero-ctas .btn { width:100%; }
+      .domains-grid { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="nav" class="solid" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MBA Partner home">
+          <span class="nav-wordmark">MBA Partner</span>
+          <span class="nav-tagline">Initiative by Alumni of Old IIM</span>
+        </a>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('Placements Bootcamp — ₹7,999')" aria-haspopup="dialog">Enroll Now</button>
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="offering-hero" aria-labelledby="offering-h1">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Programs</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Placements Bootcamp</span>
+        </nav>
+        <div class="offering-hero-grid">
+          <div class="offering-copy">
+            <div style="margin-bottom:16px;"><span class="tag-category">Bootcamp</span></div>
+            <h1 class="h1" id="offering-h1" style="color:var(--navy);margin-bottom:16px;">Domain-Specific Interview Prep. <span class="text-purple">Built Around How Campus Placements Actually Work.</span></h1>
+            <p class="offering-sub">5 domain tracks. 1:1 mock interview sessions with mentors who placed at your target companies. Scheduled around your academic calendar — not in spite of it.</p>
+            <div class="offering-hero-ctas">
+              <button class="btn btn-primary" onclick="openModal('Placements Bootcamp — ₹7,999')" aria-haspopup="dialog">Enroll Now — ₹7,999</button>
+              <button class="btn btn-secondary" onclick="openModal('Mentor Call — Bootcamp')" aria-haspopup="dialog">Talk to a Mentor First</button>
+            </div>
+          </div>
+          <aside aria-label="Enrollment details">
+            <div class="enroll-panel">
+              <div style="margin-bottom:16px;"><span class="tag-category">Bootcamp</span></div>
+              <div class="enroll-price-row"><span class="enroll-price">₹7,999</span></div>
+              <p class="enroll-price-label">Cohort Price · One-time payment</p>
+              <hr class="enroll-divider" />
+              <ul class="enroll-checklist" role="list">
+                <li class="enroll-check-item">6–8 weeks of structured interview prep</li>
+                <li class="enroll-check-item">All 5 domain tracks access</li>
+                <li class="enroll-check-item">2× 1:1 mock interview sessions</li>
+                <li class="enroll-check-item">CV and cover letter review</li>
+                <li class="enroll-check-item">Offer & salary negotiation coaching</li>
+                <li class="enroll-check-item">Verified completion certificate</li>
+              </ul>
+              <button class="btn btn-primary enroll-cta" onclick="openModal('Placements Bootcamp — ₹7,999')" aria-haspopup="dialog">Reserve My Spot</button>
+              <button class="btn btn-secondary enroll-secondary" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+              <p class="enroll-note">Cohort seats are limited. Our team confirms your spot within 24 hours.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="outcomes-band" aria-label="What this program delivers">
+      <div class="container">
+        <div class="outcomes-grid">
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Interview Readiness by Domain</div>
+            <p class="outcome-tile-desc">Not generic interview advice. Finance rounds look nothing like Product rounds. Your prep is specific to how your target domain actually interviews.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Real Mock Sessions — Not Recorded Videos</div>
+            <p class="outcome-tile-desc">1:1 sessions with mentors who sat across the table from your recruiters. They know what Accenture Strategy asks. What JM Financial tests. What Media.net screens for.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Scheduled Around Your Calendar</div>
+            <p class="outcome-tile-desc">Evening and weekend sessions built around your MBA coursework, committee commitments, and campus placement timeline — not a fixed corporate schedule.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="domains-section" aria-labelledby="domains-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Domain Tracks</p>
+          <h2 id="domains-heading">Choose Your Domain at Enrollment</h2>
+          <p>Five tracks. You select before your cohort starts. Your mentor is matched by both domain expertise and B-school profile.</p>
+        </div>
+        <div class="domains-grid">
+          <div class="domain-card">
+            <div class="domain-icon">F</div>
+            <div class="domain-name">Finance & IB</div>
+            <p class="domain-desc">Valuation, financial modelling, M&A, markets. Recruiters: JM Financial, KPMG, EY, Motilal Oswal.</p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">C</div>
+            <div class="domain-name">Consulting & Strategy</div>
+            <p class="domain-desc">Case frameworks, structured problem solving, deck presentation. Recruiters: Accenture, Kearney, BCG, McKinsey.</p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">P</div>
+            <div class="domain-name">Product Management</div>
+            <p class="domain-desc">PRD frameworks, metrics, GTM, prioritisation. Recruiters: Media.net, Pine Labs, Razorpay, Flipkart.</p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">M</div>
+            <div class="domain-name">Marketing & Brand</div>
+            <p class="domain-desc">Consumer insight, campaign design, brand strategy. Recruiters: Reliance Retail, Times of India, HUL, Marico.</p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">O</div>
+            <div class="domain-name">Operations & Supply Chain</div>
+            <p class="domain-desc">Process design, logistics, demand planning. Recruiters: Amazon, Flipkart, Mahindra, JSW.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="modules-section" aria-labelledby="modules-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Bootcamp Structure</p>
+          <h2 id="modules-heading">6 Weeks. Zero Filler.</h2>
+          <p>Every module maps to a specific gap in your interview readiness — not a generic curriculum.</p>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-number">Week 1–2</div>
+            <div class="module-name">Domain Foundations & CV Alignment</div>
+            <p class="module-desc">Domain knowledge deep-dive, CV review with your mentor, and a personalised prep roadmap tied to your placement calendar.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Week 3–4</div>
+            <div class="module-name">Technical & Aptitude Rounds</div>
+            <p class="module-desc">Domain-specific technical questions, aptitude frameworks, and written/online assessment prep — the rounds that filter before the final interview.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Week 4–5</div>
+            <div class="module-name">Group Discussion & Case Presentation</div>
+            <p class="module-desc">Live GD practice with cohort peers and mentor observation. Case presentation structure for domains that use it (Consulting, Strategy, Product).</p>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Week 5–6</div>
+            <div class="module-name">1:1 Mock Interviews</div>
+            <p class="module-desc">Two full mock interviews with your domain mentor. Structured feedback after each session. Mirrors the actual interview format your target recruiters use.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Week 6</div>
+            <div class="module-name">HR Rounds & Offer Negotiation</div>
+            <p class="module-desc">Behavioural questions, "Why us?" frameworks, salary negotiation tactics, and common HR traps by domain. Often the round where prepared candidates lose offers.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Ongoing</div>
+            <div class="module-name">Placement Season Support</div>
+            <p class="module-desc">Cohort WhatsApp group active through your placement season. Mentor availability for last-minute questions before each company's interview day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ideal-section" aria-labelledby="ideal-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ideal Student Profile</p>
+          <h2 id="ideal-heading">Who This Is For</h2>
+        </div>
+        <div class="ideal-grid">
+          <div class="ideal-card">
+            <div class="ideal-label">Profile A</div>
+            <div class="ideal-statement">"I freeze in interviews even when I know the answer."</div>
+            <p class="ideal-desc">Knowing the framework and being able to use it under pressure are two different things. 1:1 mock sessions with a mentor who placed at your target company simulate the real pressure — not a YouTube video.</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ideal-label">Profile B</div>
+            <div class="ideal-statement">"I have a Live Project on my CV. I just need interview prep now."</div>
+            <p class="ideal-desc">If your CV output gap is already covered, the standalone Bootcamp is the right next step. You don't need the All-In-One Combo if you already have the project deliverable — this gets you interview-ready efficiently.</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ideal-label">Profile C</div>
+            <div class="ideal-statement">"My college prep is generic — I need domain-specific prep, not a crash course."</div>
+            <p class="ideal-desc">Most college-run placement prep is generalised across all domains. If you've committed to Finance, Consulting, or Product, you need prep that mirrors exactly how those domains actually screen and interview.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="mentors-boot-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Bootcamp Mentors</p>
+          <h2 id="mentors-boot-heading">Your Mentor Placed at Your Target Company.</h2>
+          <p>Matched by domain and B-school profile within 48 hours of enrollment.</p>
+        </div>
+        <div class="mentors-grid">
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">AV</div></div></div>
+            <div class="mentor-info"><div class="mentor-credential">IIM Ahmedabad · ex-Strategy, Accenture</div><div class="mentor-name">Aisha Verma</div><span class="tag-domain">Consulting</span></div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">RS</div></div></div>
+            <div class="mentor-info"><div class="mentor-credential">IIM Bangalore · ex-Product, Media.net</div><div class="mentor-name">Rohan Sharma</div><span class="tag-domain">Product</span></div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">PK</div></div></div>
+            <div class="mentor-info"><div class="mentor-credential">IIM Calcutta · ex-Finance, JM Financial</div><div class="mentor-name">Priya Krishnan</div><span class="tag-domain">Finance</span></div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">AM</div></div></div>
+            <div class="mentor-info"><div class="mentor-credential">XLRI · ex-Marketing, Reliance Retail</div><div class="mentor-name">Arjun Mehta</div><span class="tag-domain">Marketing</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" aria-labelledby="test-boot-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Student Outcomes</p>
+          <h2 id="test-boot-heading">Bootcamp Alumni</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <blockquote><p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. The mock sessions made the real interview feel familiar."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">R</div><div><div class="testimonial-name">Rutuja Patil</div><div class="testimonial-institution">IIM Calcutta</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → JM Financial SIP</span></div>
+            <blockquote><p class="testimonial-quote">"My mentor knew exactly what JM Financial asks in technicals. After three mock sessions, I was answering questions I'd never even practised before — because I understood the framework, not just the answer."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">N</div><div><div class="testimonial-name">Nishant Agarwal</div><div class="testimonial-institution">IIM Ahmedabad</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Marketing → Reliance Retail SIP</span></div>
+            <blockquote><p class="testimonial-quote">"I was surprised how much the HR round prep mattered. I'd assumed I'd handle that naturally. The Bootcamp showed me exactly where I was losing offers I thought I'd already won."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">D</div><div><div class="testimonial-name">Deepika Nair</div><div class="testimonial-institution">FMS Delhi</div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" aria-labelledby="pricing-boot-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Enrollment</p>
+          <h2 id="pricing-boot-heading">Reserve Your Spot</h2>
+          <p>Cohort sizes are limited by mentor capacity. One-time payment, no recurring charges.</p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-headline">Placements Bootcamp</div>
+          <p class="pricing-sub">6–8 weeks · Live Sessions · 5 Domains</p>
+          <div class="pricing-amount-row"><span class="pricing-amount">₹7,999</span></div>
+          <p class="pricing-label">One-time cohort price · No recurring charges</p>
+          <ul class="pricing-features" role="list">
+            <li class="pricing-feature-item">Domain-specific prep across all 5 tracks</li>
+            <li class="pricing-feature-item">2× 1:1 mock interview sessions with your domain mentor</li>
+            <li class="pricing-feature-item">Technical, GD, HR, and case round preparation</li>
+            <li class="pricing-feature-item">CV and cover letter review</li>
+            <li class="pricing-feature-item">Salary negotiation and offer management coaching</li>
+            <li class="pricing-feature-item">Verified completion certificate</li>
+            <li class="pricing-feature-item">Placement season support (mentor available through your season)</li>
+          </ul>
+          <div class="pricing-cta-row">
+            <button class="btn btn-primary" onclick="openModal('Placements Bootcamp — ₹7,999')" style="width:100%" aria-haspopup="dialog">Reserve My Spot — ₹7,999</button>
+            <button class="btn btn-secondary" onclick="openModal('Free Career Call')" style="width:100%" aria-haspopup="dialog">Book a Free Career Call First</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" id="faq-boot" aria-labelledby="faq-boot-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-boot-heading">Bootcamp — FAQ</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-col">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How much time does the Bootcamp require per week?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">Live sessions are 2–3 hours per week, scheduled for evenings and weekends. Including self-practice, expect 6–8 hours per week at peak. The program is explicitly designed to run alongside your coursework and committee commitments.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Do I get 1:1 mentor access or group only?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">The Bootcamp includes 2 scheduled 1:1 mock interview sessions with your matched mentor. Group workshops, GD practice, and live sessions are group format. The 1:1 sessions are timed to your placement calendar, not a fixed slot.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Can I access multiple domain tracks?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">You select your primary domain at enrollment, which determines your mentor match. Access to study materials from all 5 domain tracks is included — useful if you're hedging between Finance and Consulting, for example. Mock sessions are conducted in your primary domain.</div>
+            </div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Should I do the Bootcamp or the All-In-One Combo?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">If you already have a real project on your CV (an internship, a consultancy engagement, or a verifiable output), the standalone Bootcamp is the right choice. If your CV lacks a project output entirely, the All-In-One Combo closes both gaps simultaneously and costs less than assembling them separately.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">What happens immediately after I pay?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">You receive a confirmation email with your cohort start date and onboarding form. Within 48 hours you're added to the cohort WhatsApp group, introduced to your mentor, and given access to the pre-cohort resource pack. First live session is within 5–7 days of enrollment.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Is there a placement guarantee?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="faq-answer">No. Any platform that offers a placement guarantee is misrepresenting how campus placements work. What the 98.7% figure reflects is the proportion of our students who landed a role in their chosen domain — not just any offer. Your preparation is in our control. The outcome is not.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--bg-main);" aria-labelledby="related-boot-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Also Available</p>
+          <h2 id="related-boot-heading">Related Programs</h2>
+        </div>
+        <div class="related-grid">
+          <a href="offering-all-in-one.html" class="related-card">
+            <span class="tag-category">All-In-One Combo</span>
+            <div class="related-card-name">Bootcamp + Live Project + Case Comp</div>
+            <p class="related-card-desc">If you also need a Live Project on your CV, the All-In-One Combo covers all three gaps at a lower combined cost.</p>
+            <span class="related-card-price">₹14,999</span>
+          </a>
+          <a href="offering-live-project.html" class="related-card">
+            <span class="tag-category">Live Project</span>
+            <div class="related-card-name">Live Projects</div>
+            <p class="related-card-desc">Close the CV output gap — real client work through Prodmark Consultants, verifiable and interview-discussable.</p>
+            <span class="related-card-price">₹4,999</span>
+          </a>
+          <a href="offering-case-comp.html" class="related-card">
+            <span class="tag-category">Case Competition</span>
+            <div class="related-card-name">Case Competition Prep</div>
+            <p class="related-card-desc">Structured competitive case practice for Consulting and Strategy roles — 4 rounds with mentor feedback.</p>
+            <span class="related-card-price">₹3,499</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--navy);padding:80px 0;text-align:center;" aria-labelledby="final-cta-boot">
+      <div class="container">
+        <p class="eyebrow" style="color:var(--yellow)">Reserve Your Spot</p>
+        <h2 id="final-cta-boot" style="font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--white);margin:16px auto;max-width:560px;line-height:1.2">Placement Season Doesn't Wait. Neither Should You.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:36px">The students who land their target domain start preparing before everyone else.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="openModal('Placements Bootcamp — ₹7,999')" aria-haspopup="dialog">Enroll Now — ₹7,999</button>
+          <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-wordmark">MBA Partner</div>
+          <p>Post-admission, pre-placement career acceleration for current MBA students. Initiative by Alumni of Old IIM.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="WhatsApp community">W</a>
+            <a href="#" class="social-link" aria-label="Telegram channel">T</a>
+            <a href="#" class="social-link" aria-label="LinkedIn page">in</a>
+            <a href="#" class="social-link" aria-label="Instagram profile">ig</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Programs</h4><ul>
+          <li><a href="offering-all-in-one.html">All-In-One Combo</a></li>
+          <li><a href="offering-bootcamp.html">Placements Bootcamp</a></li>
+          <li><a href="offering-live-project.html">Live Projects</a></li>
+          <li><a href="offering-case-comp.html">Case Competition</a></li>
+          <li><a href="offering-certifications.html">Certifications</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li>
+          <li><a href="#">WhatsApp Community</a></li>
+          <li><a href="#">Telegram Channel</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 MBA Partner. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div id="mobile-cta-bar" aria-label="Persistent enroll button" role="complementary">
+    <button class="btn btn-primary" onclick="openModal('Placements Bootcamp — ₹7,999')" style="width:100%">Enroll Now — ₹7,999</button>
+  </div>
+
+  <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button>
+      <p class="eyebrow modal-eyebrow">Get Started</p>
+      <h2 class="modal-title" id="modal-title">Reserve Your Spot</h2>
+      <p class="modal-offering-name" id="modal-offering-label">Placements Bootcamp</p>
+      <form class="modal-form" id="enroll-form" novalidate>
+        <div class="form-group"><label class="form-label" for="modal-name">Full Name</label><input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" /></div>
+        <div class="form-group"><label class="form-label" for="modal-email">Email Address</label><input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" /></div>
+        <div class="form-group"><label class="form-label" for="modal-phone">WhatsApp Number</label><input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" /></div>
+        <div class="form-group"><label class="form-label" for="modal-bschool">B-School</label><input class="form-input" type="text" id="modal-bschool" name="bschool" placeholder="IIM Ahmedabad, FMS Delhi, etc." required /></div>
+        <div class="form-group"><label class="form-label" for="modal-domain">Target Domain</label>
+          <select class="form-select" id="modal-domain" name="domain">
+            <option value="">Select your domain</option>
+            <option>Consulting &amp; Strategy</option><option>Finance &amp; Investment Banking</option>
+            <option>Product Management</option><option>Marketing &amp; Brand</option><option>Operations &amp; Supply Chain</option>
+          </select>
+        </div>
+        <button type="submit" class="modal-submit">Reserve My Spot →</button>
+        <p class="modal-note">Our team will reach you on WhatsApp within 24 hours with cohort details and payment link.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modalOverlay = document.getElementById('enroll-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalOfferingLabel = document.getElementById('modal-offering-label');
+    const enrollForm = document.getElementById('enroll-form');
+    function openModal(n) { modalOfferingLabel.textContent=n||'Placements Bootcamp'; modalOverlay.classList.add('open'); modalOverlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; setTimeout(()=>modalCloseBtn.focus(),50); }
+    function closeModal() { modalOverlay.classList.remove('open'); modalOverlay.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    modalCloseBtn.addEventListener('click',closeModal);
+    modalOverlay.addEventListener('click',(e)=>{if(e.target===modalOverlay)closeModal();});
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&modalOverlay.classList.contains('open'))closeModal();});
+    enrollForm.addEventListener('submit',(e)=>{ e.preventDefault(); const name=document.getElementById('modal-name').value.trim(); const phone=document.getElementById('modal-phone').value.trim(); const offering=modalOfferingLabel.textContent; const msg=encodeURIComponent(`Hi, I'm ${name} and I'd like to enroll in: ${offering}. My WhatsApp: ${phone}`); window.open(`https://wa.me/919999999999?text=${msg}`,'_blank'); closeModal(); });
+    const mobileToggle=document.getElementById('mobile-toggle'); const navLinks=document.getElementById('nav-links');
+    mobileToggle.addEventListener('click',()=>{ const isOpen=navLinks.classList.toggle('open'); mobileToggle.setAttribute('aria-expanded',isOpen); });
+    const mobileCTABar=document.getElementById('mobile-cta-bar');
+    window.addEventListener('scroll',()=>{ if(window.scrollY>400)mobileCTABar.classList.add('visible'); else mobileCTABar.classList.remove('visible'); },{passive:true});
+    document.querySelectorAll('.faq-question').forEach(btn=>{ btn.addEventListener('click',()=>{ const item=btn.closest('.faq-item'); const isOpen=item.classList.contains('open'); item.classList.toggle('open',!isOpen); btn.setAttribute('aria-expanded',!isOpen); }); });
+    const pref=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!pref){ const s=document.createElement('style'); s.textContent=`.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`; document.head.appendChild(s); const els=document.querySelectorAll('.module-card,.mentor-card,.testimonial-card,.ideal-card,.related-card,.domain-card,.outcome-tile'); els.forEach(el=>el.classList.add('reveal')); const obs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.1}); els.forEach(el=>obs.observe(el)); }
+  </script>
+</body>
+</html>

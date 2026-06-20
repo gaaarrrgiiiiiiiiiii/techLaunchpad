@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Competition Prep — MBA Partner</title>
+  <meta name="description" content="Structured competitive case-solving practice with mentor feedback. Builds the analytical muscle and presentation skill that Consulting and Strategy recruiters test for explicitly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .offering-hero{padding:120px 0 80px;background:var(--bg-main)}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);margin-bottom:24px}
+    .breadcrumb a{color:var(--slate);transition:color var(--transition)}.breadcrumb a:hover{color:var(--navy)}.breadcrumb-sep{color:var(--hairline)}
+    .offering-hero-grid{display:grid;grid-template-columns:58fr 42fr;gap:64px;align-items:start}
+    .offering-sub{font-size:18px;color:var(--slate);line-height:1.6;margin-bottom:32px}
+    .offering-hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .enroll-panel{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px;position:sticky;top:88px}
+    .enroll-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+    .enroll-price{font-size:36px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums}
+    .enroll-price-label{font-size:13px;color:var(--slate);margin-bottom:20px}
+    .enroll-divider{border:none;border-top:1px solid var(--hairline);margin:20px 0}
+    .enroll-checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+    .enroll-check-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5}
+    .enroll-check-item::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0;margin-top:1px}
+    .enroll-cta{width:100%;margin-bottom:12px}.enroll-secondary{width:100%}
+    .enroll-note{font-size:12px;color:var(--slate);text-align:center;margin-top:12px;line-height:1.5}
+
+    .outcomes-band{background:var(--navy);padding:64px 0}
+    .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .outcome-tile{padding:32px 28px;border-right:1px solid rgba(255,255,255,0.08)}
+    .outcome-tile:last-child{border-right:none}
+    .outcome-tile::before{content:'';display:block;width:32px;height:2px;background:var(--yellow);margin-bottom:16px}
+    .outcome-tile-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.3}
+    .outcome-tile-desc{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6}
+
+    .rounds-section{background:var(--bg-panel)}
+    .rounds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .round-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px}
+    .round-num{font-size:32px;font-weight:600;color:var(--yellow);margin-bottom:12px}
+    .round-name{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
+    .round-desc{font-size:13px;color:var(--slate);line-height:1.6}
+    .round-duration{font-size:12px;font-weight:600;color:var(--slate);margin-top:14px;letter-spacing:0.04em;display:block}
+
+    .pricing-card{max-width:540px;margin:0 auto;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:40px;text-align:center}
+    .pricing-headline{font-size:28px;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .pricing-sub{font-size:16px;color:var(--slate);margin-bottom:24px}
+    .pricing-amount{font-size:48px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums}
+    .pricing-label{font-size:13px;color:var(--slate);margin-bottom:28px;display:block;margin-top:4px}
+    .pricing-features{display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:28px}
+    .pricing-feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5}
+    .pricing-feature-item::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+    .pricing-cta-row{display:flex;flex-direction:column;gap:12px}
+
+    .combo-banner{background:var(--gold-tint);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;max-width:540px;margin-left:auto;margin-right:auto}
+    .combo-banner-text{font-size:15px;font-weight:600;color:var(--navy);line-height:1.4}
+    .combo-banner-sub{font-size:13px;color:var(--slate);margin-top:4px}
+
+    @media(max-width:900px){
+      .offering-hero{padding:100px 0 60px}
+      .offering-hero-grid{grid-template-columns:1fr;gap:40px}
+      .enroll-panel{position:static}
+      .outcomes-grid{grid-template-columns:1fr}
+      .outcome-tile{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+      .outcome-tile:last-child{border-bottom:none}
+      .rounds-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      .offering-hero-ctas{flex-direction:column}
+      .offering-hero-ctas .btn{width:100%}
+      .rounds-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header id="nav" class="solid" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MBA Partner home"><span class="nav-wordmark">MBA Partner</span><span class="nav-tagline">Initiative by Alumni of Old IIM</span></a>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html#programs">Programs</a></li><li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('Case Competition Prep — ₹3,499')" aria-haspopup="dialog">Enroll Now</button>
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="offering-hero" aria-labelledby="offering-h1">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Programs</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Case Competition Prep</span>
+        </nav>
+        <div class="offering-hero-grid">
+          <div class="offering-copy">
+            <div style="margin-bottom:16px;"><span class="tag-category">Case Competition</span></div>
+            <h1 class="h1" id="offering-h1" style="color:var(--navy);margin-bottom:16px;">From Blanking on Frameworks to <span class="text-purple">Structuring Answers in Real Time.</span></h1>
+            <p class="offering-sub">4 competitive case rounds with mentor feedback. The structured analytical thinking and presentation skill that Consulting and Strategy recruiters test for explicitly — and that no classroom teaches you how to perform under pressure.</p>
+            <div class="offering-hero-ctas">
+              <button class="btn btn-primary" onclick="openModal('Case Competition Prep — ₹3,499')" aria-haspopup="dialog">Enroll Now — ₹3,499</button>
+              <button class="btn btn-secondary" onclick="openModal('Mentor Call — Case Comp')" aria-haspopup="dialog">Talk to a Mentor First</button>
+            </div>
+          </div>
+          <aside aria-label="Enrollment details">
+            <div class="enroll-panel">
+              <div style="margin-bottom:16px;"><span class="tag-category">Case Competition</span></div>
+              <div class="enroll-price-row"><span class="enroll-price">₹3,499</span></div>
+              <p class="enroll-price-label">Cohort Price · 3–4 weeks</p>
+              <hr class="enroll-divider" />
+              <ul class="enroll-checklist" role="list">
+                <li class="enroll-check-item">4 competitive case rounds</li>
+                <li class="enroll-check-item">Real-time mentor feedback after each round</li>
+                <li class="enroll-check-item">Framework library (case types by domain)</li>
+                <li class="enroll-check-item">Presentation structure coaching</li>
+                <li class="enroll-check-item">Completion certificate</li>
+              </ul>
+              <button class="btn btn-primary enroll-cta" onclick="openModal('Case Competition Prep — ₹3,499')" aria-haspopup="dialog">Reserve My Spot</button>
+              <button class="btn btn-secondary enroll-secondary" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+              <p class="enroll-note">Also available bundled with the All-In-One Combo at a lower combined price.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="outcomes-band" aria-label="What this program delivers">
+      <div class="container">
+        <div class="outcomes-grid">
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Framework Recall Under Pressure</div>
+            <p class="outcome-tile-desc">Knowing a framework and accessing it calmly in a 30-minute case interview are different skills. 4 timed rounds build the recall muscle — not the reading-about-it muscle.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Real-Time Mentor Feedback</div>
+            <p class="outcome-tile-desc">After each round, your mentor identifies exactly where your structure broke, where you over-complicated, and where you rushed. Not a rubric — a conversation from someone who sat in that interviewer's seat.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Presentation Confidence</div>
+            <p class="outcome-tile-desc">Case competitions test how you present your analysis — not just the analysis. Deck structure, verbal walk-throughs, Q&A handling — all practiced and corrected before your real interviews.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="rounds-section" aria-labelledby="rounds-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Program Structure</p>
+          <h2 id="rounds-heading">4 Rounds. Progressive Difficulty.</h2>
+          <p>Each round builds on the last. By round 4, you're solving the same type of cases that appear in Consulting final rounds.</p>
+        </div>
+        <div class="rounds-grid">
+          <div class="round-card">
+            <div class="round-num">01</div>
+            <div class="round-name">Framework Foundations</div>
+            <p class="round-desc">Introduction to case types (market entry, profitability, M&A, operations). Framework mapping and structured approach — building the vocabulary before the pressure.</p>
+            <span class="round-duration">Week 1</span>
+          </div>
+          <div class="round-card">
+            <div class="round-num">02</div>
+            <div class="round-name">Timed Case Round</div>
+            <p class="round-desc">First live case under time pressure. 30-minute limit, real-time mentor observation. Feedback on structure clarity, hypothesis framing, and question quality.</p>
+            <span class="round-duration">Week 2</span>
+          </div>
+          <div class="round-card">
+            <div class="round-num">03</div>
+            <div class="round-name">Presentation Round</div>
+            <p class="round-desc">A case delivered as a structured presentation — the format used in Consulting finals and strategy roles. Deck structure, verbal walk-through, and Q&A handling.</p>
+            <span class="round-duration">Week 3</span>
+          </div>
+          <div class="round-card">
+            <div class="round-num">04</div>
+            <div class="round-name">Final Mock Round</div>
+            <p class="round-desc">Full-length simulation of a final Consulting round case interview. Difficult case type. Full debrief and summary feedback document. Personal performance report provided.</p>
+            <span class="round-duration">Week 4</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="ideal-cc-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ideal Student Profile</p>
+          <h2 id="ideal-cc-heading">Who This Is For</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile A</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"I know the frameworks. I just can't use them under pressure."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">Reading about MECE and doing a timed case in front of a Kearney alumni are two entirely different experiences. This program bridges that gap through repetition and progressive pressure.</p>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile B</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"I'm targeting Consulting or Strategy — it's a core requirement."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">Case interviews are not optional in Consulting recruiting. Every top firm — from Accenture Strategy to Kearney to boutique strategy houses — screens through structured cases. This isn't supplementary prep; it's the test.</p>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile C</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"I practice with peers but never get feedback that's actually useful."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">Peer case practice is better than nothing. But your peers can't tell you where your structure broke compared to what they've seen in real interviews. A mentor who placed at Accenture Strategy can — and that difference in feedback quality is what changes outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" aria-labelledby="test-cc-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Student Outcomes</p><h2 id="test-cc-heading">Case Comp Alumni</h2></div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <blockquote><p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. Consulting recruiters noticed the difference in how I structured my thinking."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">R</div><div><div class="testimonial-name">Rutuja Patil</div><div class="testimonial-institution">IIM Calcutta</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Kearney → Strategy SIP</span></div>
+            <blockquote><p class="testimonial-quote">"Round 4 was harder than my actual Kearney interview. When the real thing happened, I already knew what composed felt like — even when I didn't know the answer. That composure is what they hire for."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">V</div><div><div class="testimonial-name">Vikram Sinha</div><div class="testimonial-institution">IIMA</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">BCG Off-Campus → Final Offer</span></div>
+            <blockquote><p class="testimonial-quote">"The feedback after each round was the part I didn't expect to be that valuable. My mentor identified a tic in how I framed hypotheses that I'd never noticed — and it was showing up every time."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">S</div><div><div class="testimonial-name">Shreya Iyer</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="pricing-cc-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Enrollment</p><h2 id="pricing-cc-heading">Reserve Your Spot</h2><p>3–4 weeks. Cohort-based. Mentor-facilitated.</p></div>
+        <div class="pricing-card">
+          <div class="pricing-headline">Case Competition Prep</div>
+          <p class="pricing-sub">4 Rounds · Live Sessions · Mentor Feedback</p>
+          <div class="pricing-amount">₹3,499</div>
+          <span class="pricing-label">One-time cohort price · No recurring charges</span>
+          <ul class="pricing-features" role="list">
+            <li class="pricing-feature-item">4 competitive case rounds — progressively harder</li>
+            <li class="pricing-feature-item">Real-time mentor feedback after each round</li>
+            <li class="pricing-feature-item">Case framework library (all major types)</li>
+            <li class="pricing-feature-item">Presentation structure coaching (deck + verbal)</li>
+            <li class="pricing-feature-item">Personal performance summary after Round 4</li>
+            <li class="pricing-feature-item">Completion certificate</li>
+          </ul>
+          <div class="pricing-cta-row">
+            <button class="btn btn-primary" onclick="openModal('Case Competition Prep — ₹3,499')" style="width:100%" aria-haspopup="dialog">Reserve My Spot — ₹3,499</button>
+            <button class="btn btn-secondary" onclick="openModal('Free Career Call')" style="width:100%" aria-haspopup="dialog">Book a Free Career Call First</button>
+          </div>
+        </div>
+        <div class="combo-banner" role="complementary">
+          <div><div class="combo-banner-text">Need case prep + interview prep + a Live Project?</div><div class="combo-banner-sub">The All-In-One Combo covers all three at ₹14,999 — less than combining them separately.</div></div>
+          <a href="offering-all-in-one.html" class="btn btn-primary" style="flex-shrink:0">View Combo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" id="faq-cc" aria-labelledby="faq-cc-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Questions</p><h2 id="faq-cc-heading">Case Competition Prep — FAQ</h2></div>
+        <div class="faq-grid">
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Is this only for Consulting roles?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Case interviews are a standard screening tool for Consulting and Strategy roles. They're also increasingly used in Product Management interviews (product strategy cases) and Finance interviews (market analysis cases). If you're targeting any of these three domains, case prep is not optional.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">How is this different from peer case practice?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Peer practice is better than nothing. The problem is calibration — your peers don't know what the interviewer at Accenture Strategy actually screens for, or where your hypothesis framing is weak compared to candidates who got offers. A mentor who placed at that company can identify the exact gaps that matter. That's a fundamentally different quality of feedback.</div></div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Can I do this alongside the Bootcamp or Live Project?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Yes. The Case Competition Prep runs for 3–4 weeks and requires 4–6 hours per week. It's designed to run alongside other programs — it's one of the three tracks in the All-In-One Combo for exactly this reason. If you're doing it standalone alongside a Live Project, the schedules don't conflict by design.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">What case types are covered?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Market entry, profitability analysis, M&A feasibility, operations optimisation, and strategy/growth cases. The framework library covers all types used in Indian MBA placement rounds by Accenture, Kearney, Deloitte, EY-P, and boutique strategy firms.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="related-cc-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Also Available</p><h2 id="related-cc-heading">Related Programs</h2></div>
+        <div class="related-grid">
+          <a href="offering-all-in-one.html" class="related-card"><span class="tag-category">All-In-One Combo</span><div class="related-card-name">Bootcamp + Live Project + Case Comp</div><p class="related-card-desc">Includes Case Comp prep plus interview coaching and a Live Project — at a lower combined price.</p><span class="related-card-price">₹14,999</span></a>
+          <a href="offering-bootcamp.html" class="related-card"><span class="tag-category">Bootcamp</span><div class="related-card-name">Placements Bootcamp</div><p class="related-card-desc">Structured interview prep for all 5 domains — adds 1:1 mock sessions and HR round coaching.</p><span class="related-card-price">₹7,999</span></a>
+          <a href="offering-live-project.html" class="related-card"><span class="tag-category">Live Project</span><div class="related-card-name">Live Projects</div><p class="related-card-desc">Add a real client project output to your CV — the gap case prep alone doesn't close.</p><span class="related-card-price">₹4,999</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--navy);padding:80px 0;text-align:center;" aria-labelledby="final-cta-cc">
+      <div class="container">
+        <p class="eyebrow" style="color:var(--yellow)">Reserve Your Spot</p>
+        <h2 id="final-cta-cc" style="font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--white);margin:16px auto;max-width:560px;line-height:1.2">Consulting Recruiters Don't Give Second Chances. Get the Rep In Now.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:36px">The next cohort starts in 2 weeks. 4 rounds. Done before season starts.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="openModal('Case Competition Prep — ₹3,499')" aria-haspopup="dialog">Enroll Now — ₹3,499</button>
+          <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="nav-wordmark">MBA Partner</div><p>Post-admission, pre-placement career acceleration for current MBA students.</p><div class="footer-social"><a href="#" class="social-link" aria-label="WhatsApp">W</a><a href="#" class="social-link" aria-label="Telegram">T</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Instagram">ig</a></div></div>
+        <div class="footer-col"><h4>Programs</h4><ul><li><a href="offering-all-in-one.html">All-In-One Combo</a></li><li><a href="offering-bootcamp.html">Placements Bootcamp</a></li><li><a href="offering-live-project.html">Live Projects</a></li><li><a href="offering-case-comp.html">Case Competition</a></li><li><a href="offering-certifications.html">Certifications</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#mentors">Mentors</a></li><li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li><li><a href="#">WhatsApp Community</a></li><li><a href="#">Telegram Channel</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
+    </div>
+  </footer>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Case Competition Prep — ₹3,499')" style="width:100%">Enroll Now — ₹3,499</button></div>
+
+  <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Case Competition Prep</p>
+      <form class="modal-form" id="enroll-form" novalidate>
+        <div class="form-group"><label class="form-label" for="modal-name">Full Name</label><input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" /></div>
+        <div class="form-group"><label class="form-label" for="modal-email">Email Address</label><input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" /></div>
+        <div class="form-group"><label class="form-label" for="modal-phone">WhatsApp Number</label><input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" /></div>
+        <div class="form-group"><label class="form-label" for="modal-bschool">B-School</label><input class="form-input" type="text" id="modal-bschool" name="bschool" placeholder="IIM Ahmedabad, FMS Delhi, etc." required /></div>
+        <button type="submit" class="modal-submit">Reserve My Spot →</button>
+        <p class="modal-note">Our team will reach you on WhatsApp within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+  <script>
+    const mo=document.getElementById('enroll-modal'),mcb2=document.getElementById('modal-close-btn'),mol=document.getElementById('modal-offering-label'),ef=document.getElementById('enroll-form');
+    function openModal(n){mol.textContent=n||'Case Competition Prep';mo.classList.add('open');mo.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>mcb2.focus(),50);}
+    function closeModal(){mo.classList.remove('open');mo.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    mcb2.addEventListener('click',closeModal);mo.addEventListener('click',(e)=>{if(e.target===mo)closeModal();});document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mo.classList.contains('open'))closeModal();});
+    ef.addEventListener('submit',(e)=>{e.preventDefault();const name=document.getElementById('modal-name').value.trim(),phone=document.getElementById('modal-phone').value.trim(),offering=mol.textContent,msg=encodeURIComponent(`Hi, I'm ${name} and I'd like to enroll in: ${offering}. My WhatsApp: ${phone}`);window.open(`https://wa.me/919999999999?text=${msg}`,'_blank');closeModal();});
+    const mt=document.getElementById('mobile-toggle'),nl=document.getElementById('nav-links');mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+    const mcbar=document.getElementById('mobile-cta-bar');window.addEventListener('scroll',()=>{if(window.scrollY>400)mcbar.classList.add('visible');else mcbar.classList.remove('visible');},{passive:true});
+    document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');item.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);});});
+    const pref=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!pref){const s=document.createElement('style');s.textContent=`.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`;document.head.appendChild(s);const els=document.querySelectorAll('.round-card,.testimonial-card,.related-card,.outcome-tile');els.forEach(el=>el.classList.add('reveal'));const obs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.1});els.forEach(el=>obs.observe(el));}
+  </script>
+</body>
+</html>

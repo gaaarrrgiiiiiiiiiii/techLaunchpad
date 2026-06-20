@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All-In-One Combo — MBA Partner</title>
+  <meta name="description" content="The complete MBA placement preparation stack — Live Project, Case Competition, and Placements Bootcamp in a single enrollment. The most chosen program at MBA Partner." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ── Page-specific styles ── */
+    .offering-hero {
+      padding: 120px 0 80px;
+      background: var(--bg-main);
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--slate);
+      margin-bottom: 24px;
+    }
+    .breadcrumb a { color: var(--slate); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--navy); }
+    .breadcrumb-sep { color: var(--hairline); }
+
+    .offering-hero-grid {
+      display: grid;
+      grid-template-columns: 58fr 42fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .offering-eyebrow { margin-bottom: 12px; }
+    .offering-h1 { margin-bottom: 16px; color: var(--navy); }
+    .offering-sub {
+      font-size: 18px;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .offering-hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Sticky enroll panel */
+    .enroll-panel {
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      position: sticky;
+      top: 88px;
+    }
+    .enroll-panel-tag { margin-bottom: 16px; }
+    .enroll-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .enroll-price {
+      
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--navy);
+      font-variant-numeric: tabular-nums;
+    }
+    .enroll-price-original {
+      font-size: 16px;
+      color: var(--slate);
+      text-decoration: line-through;
+    }
+    .enroll-price-label { font-size: 13px; color: var(--slate); margin-bottom: 20px; }
+    .enroll-divider { border: none; border-top: 1px solid var(--hairline); margin: 20px 0; }
+    .enroll-checklist { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .enroll-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--navy-body);
+      line-height: 1.5;
+    }
+    .enroll-check-item::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .enroll-cta { width: 100%; margin-bottom: 12px; }
+    .enroll-secondary { width: 100%; }
+    .enroll-note { font-size: 12px; color: var(--slate); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+    /* Outcomes band */
+    .outcomes-band {
+      background: var(--navy);
+      padding: 64px 0;
+    }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .outcome-tile {
+      padding: 32px 28px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .outcome-tile:last-child { border-right: none; }
+    .outcome-tile::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--yellow);
+      margin-bottom: 16px;
+    }
+    .outcome-tile-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .outcome-tile-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* What's Included */
+    .included-section { background: var(--bg-main); }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      padding: 28px;
+    }
+    .module-number {
+      
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--yellow);
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+    }
+    .module-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .module-desc { font-size: 14px; color: var(--slate); line-height: 1.6; }
+    .module-duration {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate);
+      margin-top: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Who This Is For */
+    .ideal-section { background: var(--bg-panel); }
+    .ideal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .ideal-card {
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      padding: 28px;
+    }
+    .ideal-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .ideal-statement {
+      
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+      font-style: italic;
+    }
+    .ideal-desc { font-size: 14px; color: var(--slate); line-height: 1.6; }
+
+    /* Pricing CTA */
+    .pricing-section { background: var(--bg-main); }
+    .pricing-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      padding: 40px;
+      text-align: center;
+    }
+    .pricing-card.flagship { border-color: var(--yellow); }
+    .pricing-headline {
+      
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .pricing-sub { font-size: 16px; color: var(--slate); margin-bottom: 24px; }
+    .pricing-amount-row { display: flex; align-items: baseline; gap: 12px; justify-content: center; margin-bottom: 6px; }
+    .pricing-amount {
+      
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--navy);
+      font-variant-numeric: tabular-nums;
+    }
+    .pricing-original { font-size: 20px; color: var(--slate); text-decoration: line-through; }
+    .pricing-label { font-size: 13px; color: var(--slate); margin-bottom: 28px; }
+    .pricing-features { display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 28px; }
+    .pricing-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--navy-body);
+      line-height: 1.5;
+    }
+    .pricing-feature-item::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+    .pricing-cta-row { display: flex; flex-direction: column; gap: 12px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .offering-hero { padding: 100px 0 60px; }
+      .offering-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .enroll-panel { position: static; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .outcome-tile { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .outcome-tile:last-child { border-bottom: none; }
+      .modules-grid { grid-template-columns: 1fr; }
+      .ideal-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .offering-hero-ctas { flex-direction: column; }
+      .offering-hero-ctas .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="solid" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MBA Partner home">
+          <span class="nav-wordmark">MBA Partner</span>
+          <span class="nav-tagline">Initiative by Alumni of Old IIM</span>
+        </a>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('All-In-One Combo — ₹14,999')" aria-haspopup="dialog">Enroll Now</button>
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- OFFERING HERO -->
+    <section class="offering-hero" aria-labelledby="offering-h1">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Programs</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">All-In-One Combo</span>
+        </nav>
+        <div class="offering-hero-grid">
+          <div class="offering-copy">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <span class="tag-category">All-In-One Combo</span>
+              <span class="tag-most-chosen">Most Chosen</span>
+            </div>
+            <h1 class="offering-h1" id="offering-h1">The Complete Placement Prep Stack — <span class="text-purple">One Enrollment.</span></h1>
+            <p class="offering-sub">
+              Live Project output for your CV, Case Competition practice, and domain-specific
+              mock interviews — the three credentials most students assemble separately,
+              at a higher combined cost and with less coordination.
+            </p>
+            <div class="offering-hero-ctas">
+              <button class="btn btn-primary" onclick="openModal('All-In-One Combo — ₹14,999')" aria-haspopup="dialog">Enroll Now — ₹14,999</button>
+              <button class="btn btn-secondary" onclick="openModal('Mentor Call — All-In-One Combo')" aria-haspopup="dialog">Talk to a Mentor First</button>
+            </div>
+          </div>
+
+          <!-- Sticky Enroll Panel -->
+          <aside aria-label="Enrollment details">
+            <div class="enroll-panel">
+              <div class="enroll-panel-tag">
+                <span class="tag-most-chosen">Most Chosen Program</span>
+              </div>
+              <div class="enroll-price-row">
+                <span class="enroll-price">₹14,999</span>
+                <span class="enroll-price-original">₹18,500</span>
+              </div>
+              <p class="enroll-price-label">Cohort Price · One-time payment</p>
+              <hr class="enroll-divider" />
+              <ul class="enroll-checklist" role="list">
+                <li class="enroll-check-item">Live Project with real client output (CV-ready)</li>
+                <li class="enroll-check-item">Case Competition prep — 4 full rounds with mentor feedback</li>
+                <li class="enroll-check-item">Placements Bootcamp — all 5 domain tracks</li>
+                <li class="enroll-check-item">3× 1:1 mock interview sessions</li>
+                <li class="enroll-check-item">Verified completion certificate</li>
+                <li class="enroll-check-item">Access to 5,000+ alumni network</li>
+                <li class="enroll-check-item">Pre-season resource pack</li>
+              </ul>
+              <button class="btn btn-primary enroll-cta" onclick="openModal('All-In-One Combo — ₹14,999')" aria-haspopup="dialog">Reserve My Spot</button>
+              <button class="btn btn-secondary enroll-secondary" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+              <p class="enroll-note">Our team will confirm your cohort date within 24 hours. Seats are cohort-limited.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOME PROMISE BAND -->
+    <div class="outcomes-band" aria-label="What this program delivers">
+      <div class="container">
+        <div class="outcomes-grid">
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">A CV Output That Explains Itself</div>
+            <p class="outcome-tile-desc">A verifiable project deliverable from Prodmark Consultants Pvt. Ltd. — your name on real client work that interviewers can ask about in depth.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Case Confidence Under Pressure</div>
+            <p class="outcome-tile-desc">Structured case rounds with mentor feedback. The analytical and presentation muscle that Consulting and Strategy recruiters test for explicitly in every interview.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Domain-Specific Interview Readiness</div>
+            <p class="outcome-tile-desc">Mock interviews with mentors who placed at your target companies. Finance, Consulting, Product, Marketing, Operations — you pick your domain before you start.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="included-section" aria-labelledby="included-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Program Structure</p>
+          <h2 id="included-heading">What's Included</h2>
+          <p>Six modules running concurrently over 10–12 weeks — designed around your academic calendar, not in spite of it.</p>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-number">Module 01</div>
+            <div class="module-name">Onboarding & Domain Matching</div>
+            <p class="module-desc">Domain selection, mentor matching by B-school profile and target company, cohort orientation, and pre-season resource access.</p>
+            <span class="module-duration">Week 1</span>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Module 02</div>
+            <div class="module-name">Live Project Execution</div>
+            <p class="module-desc">Real client engagement through Prodmark Consultants. Strategy, Finance, Marketing, or Operations — a graded deliverable that produces a CV-ready output.</p>
+            <span class="module-duration">Weeks 2–7</span>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Module 03</div>
+            <div class="module-name">Placements Bootcamp Modules</div>
+            <p class="module-desc">Structured SIP and Final Placement preparation — domain knowledge, case frameworks, HR rounds, and salary negotiation. 5 domain tracks available.</p>
+            <span class="module-duration">Weeks 2–8 (concurrent)</span>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Module 04</div>
+            <div class="module-name">Case Competition Prep</div>
+            <p class="module-desc">4 competitive case rounds with real-time mentor feedback. Structured practice for the analytical and presentation skill that Consulting recruiters test for explicitly.</p>
+            <span class="module-duration">Weeks 3–6 (concurrent)</span>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Module 05</div>
+            <div class="module-name">1:1 Mock Interview Sessions</div>
+            <p class="module-desc">3 scheduled 1:1 mock interviews with your domain mentor — timed to your campus placement calendar. CV review and offer negotiation coaching included.</p>
+            <span class="module-duration">Weeks 8–11</span>
+          </div>
+          <div class="module-card">
+            <div class="module-number">Module 06</div>
+            <div class="module-name">Placement Support & Network</div>
+            <p class="module-desc">Access to the 5,000+ MBA Partner alumni network. Verified completion certificate issued by Prodmark Consultants Pvt. Ltd. Ongoing community access post-cohort.</p>
+            <span class="module-duration">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section class="ideal-section" aria-labelledby="ideal-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ideal Student Profile</p>
+          <h2 id="ideal-heading">Who This Is For</h2>
+          <p>Three student profiles this program is built around. If you recognise yourself in any of them, the All-In-One Combo is the most efficient path forward.</p>
+        </div>
+        <div class="ideal-grid">
+          <div class="ideal-card">
+            <div class="ideal-label">Profile A</div>
+            <div class="ideal-statement">"I'm targeting a competitive domain and want every gap closed before season starts."</div>
+            <p class="ideal-desc">You've identified your domain, you know the companies you want to land, and you're not willing to leave any preparation gap open. The All-In-One Combo is designed for this exact intent.</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ideal-label">Profile B</div>
+            <div class="ideal-statement">"I have 3+ months before placements and want to use the time correctly."</div>
+            <p class="ideal-desc">3 months is the ideal enrollment window. The program is designed to run concurrently with your coursework at 10–12 hours per week at peak — front-loaded by design so your CV output is ready before season.</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ideal-label">Profile C</div>
+            <div class="ideal-statement">"I'd spend more assembling this separately — and the coordination alone costs time."</div>
+            <p class="ideal-desc">Most students assemble Live Projects, case prep, and mock interview services separately, at a combined cost 30–40% higher. The Combo also ensures these three track together — your mentor knows your project and your case progress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTORS -->
+    <section style="background: var(--bg-main);" aria-labelledby="mentors-heading-detail">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Your Mentors</p>
+          <h2 id="mentors-heading-detail">Placed by the Best. Now Mentoring You.</h2>
+          <p>Every mentor in this program placed at a company on your target list. Matched by domain and B-school profile within 48 hours of enrollment.</p>
+        </div>
+        <div class="mentors-grid">
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">AV</div></div></div>
+            <div class="mentor-info">
+              <div class="mentor-credential">IIM Ahmedabad · ex-Strategy, Accenture</div>
+              <div class="mentor-name">Aisha Verma</div>
+              <span class="tag-domain">Consulting</span>
+            </div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">RS</div></div></div>
+            <div class="mentor-info">
+              <div class="mentor-credential">IIM Bangalore · ex-Product, Media.net</div>
+              <div class="mentor-name">Rohan Sharma</div>
+              <span class="tag-domain">Product</span>
+            </div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">PK</div></div></div>
+            <div class="mentor-info">
+              <div class="mentor-credential">IIM Calcutta · ex-Finance, JM Financial</div>
+              <div class="mentor-name">Priya Krishnan</div>
+              <span class="tag-domain">Finance</span>
+            </div>
+          </article>
+          <article class="mentor-card">
+            <div class="mentor-photo"><div class="mentor-photo-placeholder" aria-hidden="true"><div class="mentor-avatar">AM</div></div></div>
+            <div class="mentor-info">
+              <div class="mentor-credential">XLRI · ex-Marketing, Reliance Retail</div>
+              <div class="mentor-name">Arjun Mehta</div>
+              <span class="tag-domain">Marketing</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section style="background: var(--bg-panel);" aria-labelledby="testimonials-detail-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Student Outcomes</p>
+          <h2 id="testimonials-detail-heading">All-In-One Combo Alumni</h2>
+          <p>Named, specific, verifiable outcomes — from students who enrolled in this exact program.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Marketing → Reliance Retail SIP</span></div>
+            <blockquote><p class="testimonial-quote">"The All-In-One Combo feels expensive until you calculate what you'd spend assembling the same prep separately. Worth every rupee. The cohort network alone is still valuable two years later."</p></blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">D</div>
+              <div><div class="testimonial-name">Deepika Nair</div><div class="testimonial-institution">FMS Delhi</div></div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product Management → Media.net</span></div>
+            <blockquote><p class="testimonial-quote">"I came from engineering with no product experience and genuinely believed I was behind. The Live Project gave me something real to talk about in every interview. I walked in prepared."</p></blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">SS</div>
+              <div><div class="testimonial-name">Shen Shaji</div><div class="testimonial-institution">IIM Bangalore</div></div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <blockquote><p class="testimonial-quote">"The case competition prep was the difference between blanking on frameworks and structuring answers in real time. Consulting recruiters noticed the difference in how I structured my thinking."</p></blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">R</div>
+              <div><div class="testimonial-name">Rutuja Patil</div><div class="testimonial-institution">IIM Calcutta</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING & ENROLL -->
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Enrollment</p>
+          <h2 id="pricing-heading">Reserve Your Spot in the Next Cohort</h2>
+          <p>Cohorts are limited by design — mentor capacity determines enrollment size, not revenue targets.</p>
+        </div>
+        <div class="pricing-card flagship">
+          <span class="tag-most-chosen" style="margin-bottom:16px;display:inline-block">Most Chosen Program</span>
+          <div class="pricing-headline">All-In-One Combo</div>
+          <p class="pricing-sub">Bootcamp + Case Competition + Live Project</p>
+          <div class="pricing-amount-row">
+            <span class="pricing-amount">₹14,999</span>
+            <span class="pricing-original">₹18,500</span>
+          </div>
+          <p class="pricing-label">One-time cohort price · No recurring charges</p>
+          <ul class="pricing-features" role="list">
+            <li class="pricing-feature-item">Live Project with Prodmark Consultants Pvt. Ltd. (real client, graded output)</li>
+            <li class="pricing-feature-item">Case Competition — 4 competitive rounds with mentor feedback</li>
+            <li class="pricing-feature-item">Placements Bootcamp — all 5 domain tracks (Finance, Consulting, Product, Marketing, Operations)</li>
+            <li class="pricing-feature-item">3× 1:1 mock interview sessions with your domain mentor</li>
+            <li class="pricing-feature-item">Verified completion certificate</li>
+            <li class="pricing-feature-item">5,000+ alumni network access</li>
+            <li class="pricing-feature-item">Runs concurrent with coursework · ~10–12 hrs/week at peak</li>
+          </ul>
+          <div class="pricing-cta-row">
+            <button class="btn btn-primary" onclick="openModal('All-In-One Combo — ₹14,999')" style="width:100%" aria-haspopup="dialog">Reserve My Spot — ₹14,999</button>
+            <button class="btn btn-secondary" onclick="openModal('Free Career Call')" style="width:100%" aria-haspopup="dialog">Book a Free Career Call First</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background:var(--bg-panel)" id="faq-detail" aria-labelledby="faq-detail-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-detail-heading">All-In-One Combo — FAQ</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-col">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How much time does the All-In-One Combo require per week?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">At peak (weeks 3–7), expect 10–12 hours per week. The three components are designed to run concurrently, not consecutively — so you're not doing 36 weeks of prep. Bootcamp sessions are scheduled for evenings and weekends around your academic calendar.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I enroll if SIP season is 3 months away?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">3 months is the ideal window. It allows the Live Project to complete and be written up on your CV before campus season, and leaves 4–6 weeks for focused mock interview prep. Enrolling at under 6 weeks compresses the Live Project significantly — we'd recommend the standalone Bootcamp in that scenario.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What domains are covered in the Bootcamp component?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">Finance & Investment Banking, Consulting & Strategy, Product Management, Marketing & Brand, and Operations & Supply Chain. You select your primary domain at enrollment. Your mentor is matched to that domain within 48 hours.</div>
+            </div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is the Live Project real client work or simulated?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">Real. Projects are executed through Prodmark Consultants Pvt. Ltd., an actual consulting entity. The deliverable is graded and the engagement is verifiable — not a simulated case study. This is what allows you to present it as work experience rather than coursework.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What happens after I pay?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">You receive a confirmation email with your cohort start date and onboarding form link (domain selection, B-school, placement timeline). Within 48 hours, you're added to the cohort WhatsApp group, introduced to your mentor, and given access to the pre-cohort resource pack. First live session is within 5–7 days.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I switch domains after enrolling?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">Domain selection is confirmed at enrollment because mentor matching and project allocation are immediate. If your placement strategy shifts before the cohort starts, contact us directly — switches are handled case by case within the first 72 hours of enrollment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PROGRAMS -->
+    <section style="background: var(--bg-main);" aria-labelledby="related-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Also Available</p>
+          <h2 id="related-heading">Other Programs</h2>
+          <p>If the All-In-One Combo is more than you need right now, each component is also available standalone.</p>
+        </div>
+        <div class="related-grid">
+          <a href="offering-bootcamp.html" class="related-card">
+            <span class="tag-category">Bootcamp</span>
+            <div class="related-card-name">Placements Bootcamp</div>
+            <p class="related-card-desc">Structured interview prep across 5 domains with 1:1 mentor sessions. Best if your Live Project CV gap is already covered.</p>
+            <span class="related-card-price">₹7,999</span>
+          </a>
+          <a href="offering-live-project.html" class="related-card">
+            <span class="tag-category">Live Project</span>
+            <div class="related-card-name">Live Projects</div>
+            <p class="related-card-desc">Real client work through Prodmark Consultants. The fastest way to close the CV output gap before placement season.</p>
+            <span class="related-card-price">₹4,999</span>
+          </a>
+          <a href="offering-case-comp.html" class="related-card">
+            <span class="tag-category">Case Competition</span>
+            <div class="related-card-name">Case Competition Prep</div>
+            <p class="related-card-desc">Structured case practice for Consulting and Strategy roles. 4 competitive rounds with real-time mentor feedback.</p>
+            <span class="related-card-price">₹3,499</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section style="background: var(--navy); padding: 80px 0; text-align:center;" aria-labelledby="final-cta-h">
+      <div class="container">
+        <p class="eyebrow" style="color:var(--yellow)">Reserve Your Spot</p>
+        <h2 id="final-cta-h" style="font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--white);margin:16px auto 16px;max-width:560px;line-height:1.2">Placement Season Doesn't Wait. Neither Should You.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:36px">The students who land their target domain start preparing before everyone else.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="openModal('All-In-One Combo — ₹14,999')" aria-haspopup="dialog">Enroll Now — ₹14,999</button>
+          <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+        </div>
+        <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.3)">Trusted by 5,000+ MBA students · Cohort seats are limited</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-wordmark">MBA Partner</div>
+          <p>Post-admission, pre-placement career acceleration for current MBA students. Initiative by Alumni of Old IIM.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="WhatsApp community">W</a>
+            <a href="#" class="social-link" aria-label="Telegram channel">T</a>
+            <a href="#" class="social-link" aria-label="LinkedIn page">in</a>
+            <a href="#" class="social-link" aria-label="Instagram profile">ig</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="offering-all-in-one.html">All-In-One Combo</a></li>
+            <li><a href="offering-bootcamp.html">Placements Bootcamp</a></li>
+            <li><a href="offering-live-project.html">Live Projects</a></li>
+            <li><a href="offering-case-comp.html">Case Competition</a></li>
+            <li><a href="offering-certifications.html">Certifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#mentors">Mentors</a></li>
+            <li><a href="index.html#testimonials">Outcomes</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li>
+            <li><a href="#">WhatsApp Community</a></li>
+            <li><a href="#">Telegram Channel</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 MBA Partner. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE CTA -->
+  <div id="mobile-cta-bar" aria-label="Persistent enroll button" role="complementary">
+    <button class="btn btn-primary" onclick="openModal('All-In-One Combo — ₹14,999')" style="width:100%">Enroll Now — ₹14,999</button>
+  </div>
+
+  <!-- ENROLLMENT MODAL -->
+  <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button>
+      <p class="eyebrow modal-eyebrow">Get Started</p>
+      <h2 class="modal-title" id="modal-title">Reserve Your Spot</h2>
+      <p class="modal-offering-name" id="modal-offering-label">All-In-One Combo</p>
+      <form class="modal-form" id="enroll-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="modal-name">Full Name</label>
+          <input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-email">Email Address</label>
+          <input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-phone">WhatsApp Number</label>
+          <input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-bschool">B-School</label>
+          <input class="form-input" type="text" id="modal-bschool" name="bschool" placeholder="IIM Ahmedabad, FMS Delhi, etc." required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-domain">Target Domain</label>
+          <select class="form-select" id="modal-domain" name="domain">
+            <option value="">Select your domain</option>
+            <option>Consulting &amp; Strategy</option>
+            <option>Finance &amp; Investment Banking</option>
+            <option>Product Management</option>
+            <option>Marketing &amp; Brand</option>
+            <option>Operations &amp; Supply Chain</option>
+            <option>General Management</option>
+          </select>
+        </div>
+        <button type="submit" class="modal-submit">Reserve My Spot →</button>
+        <p class="modal-note">Our team will reach you on WhatsApp within 24 hours with cohort details and payment link.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal
+    const modalOverlay = document.getElementById('enroll-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalOfferingLabel = document.getElementById('modal-offering-label');
+    const enrollForm = document.getElementById('enroll-form');
+
+    function openModal(offeringName) {
+      modalOfferingLabel.textContent = offeringName || 'All-In-One Combo';
+      modalOverlay.classList.add('open');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => modalCloseBtn.focus(), 50);
+    }
+    function closeModal() {
+      modalOverlay.classList.remove('open');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal(); });
+    enrollForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('modal-name').value.trim();
+      const phone = document.getElementById('modal-phone').value.trim();
+      const offering = modalOfferingLabel.textContent;
+      const msg = encodeURIComponent(`Hi, I'm ${name} and I'd like to enroll in: ${offering}. My WhatsApp: ${phone}`);
+      window.open(`https://wa.me/919999999999?text=${msg}`, '_blank');
+      closeModal();
+    });
+
+    // Nav
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Mobile CTA bar
+    const mobileCTABar = document.getElementById('mobile-cta-bar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) mobileCTABar.classList.add('visible');
+      else mobileCTABar.classList.remove('visible');
+    }, { passive: true });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Scroll reveal
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      const style = document.createElement('style');
+      style.textContent = `.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`;
+      document.head.appendChild(style);
+      const revealEls = document.querySelectorAll('.module-card,.mentor-card,.testimonial-card,.ideal-card,.related-card,.outcome-tile');
+      revealEls.forEach(el => el.classList.add('reveal'));
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); } });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => obs.observe(el));
+    }
+  </script>
+</body>
+</html>

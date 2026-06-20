@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Projects — MBA Partner</title>
+  <meta name="description" content="Real client work through Prodmark Consultants Pvt. Ltd. — a graded, verifiable project output in your domain that sits on your CV as evidence, not a course certificate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .offering-hero{padding:120px 0 80px;background:var(--bg-main)}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);margin-bottom:24px}
+    .breadcrumb a{color:var(--slate);transition:color var(--transition)}.breadcrumb a:hover{color:var(--navy)}.breadcrumb-sep{color:var(--hairline)}
+    .offering-hero-grid{display:grid;grid-template-columns:58fr 42fr;gap:64px;align-items:start}
+    .offering-sub{font-size:18px;color:var(--slate);line-height:1.6;margin-bottom:32px}
+    .offering-hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .enroll-panel{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px;position:sticky;top:88px}
+    .enroll-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+    .enroll-price{font-size:36px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums}
+    .enroll-price-label{font-size:13px;color:var(--slate);margin-bottom:20px}
+    .enroll-divider{border:none;border-top:1px solid var(--hairline);margin:20px 0}
+    .enroll-checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+    .enroll-check-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5}
+    .enroll-check-item::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0;margin-top:1px}
+    .enroll-cta{width:100%;margin-bottom:12px}.enroll-secondary{width:100%}
+    .enroll-note{font-size:12px;color:var(--slate);text-align:center;margin-top:12px;line-height:1.5}
+
+    .outcomes-band{background:var(--navy);padding:64px 0}
+    .outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .outcome-tile{padding:32px 28px;border-right:1px solid rgba(255,255,255,0.08)}
+    .outcome-tile:last-child{border-right:none}
+    .outcome-tile::before{content:'';display:block;width:32px;height:2px;background:var(--yellow);margin-bottom:16px}
+    .outcome-tile-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.3}
+    .outcome-tile-desc{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6}
+
+    .domains-section{background:var(--bg-panel)}
+    .domains-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .domain-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:24px 20px;text-align:center}
+    .domain-icon{font-size:28px;font-weight:600;color:var(--yellow);margin-bottom:12px}
+    .domain-name{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .domain-desc{font-size:12px;color:var(--slate);line-height:1.5}
+
+    .process-section{background:var(--bg-main)}
+    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .process-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);height:1px;background:var(--hairline);z-index:0}
+    .process-step{padding:0 20px;text-align:center;position:relative;z-index:1}
+    .process-num{font-size:40px;font-weight:600;color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:16px;display:inline-block;position:relative}
+    .process-num::after{content:'';display:block;width:44px;height:44px;border-radius:50%;background:var(--bg-main);border:1px solid var(--hairline);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1}
+    .process-step-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .process-step-desc{font-size:13px;color:var(--slate);line-height:1.6}
+
+    .pricing-section{background:var(--bg-main)}
+    .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto}
+    .pricing-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px}
+    .pricing-card.highlighted{border-color:var(--yellow)}
+    .pricing-headline{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .pricing-sub{font-size:14px;color:var(--slate);margin-bottom:20px}
+    .pricing-amount{font-size:40px;font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;margin-bottom:4px}
+    .pricing-label{font-size:13px;color:var(--slate);margin-bottom:20px}
+    .pricing-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+    .pricing-feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--navy-body);line-height:1.5}
+    .pricing-feature-item::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+
+    @media(max-width:900px){
+      .offering-hero{padding:100px 0 60px}
+      .offering-hero-grid{grid-template-columns:1fr;gap:40px}
+      .enroll-panel{position:static}
+      .outcomes-grid{grid-template-columns:1fr}
+      .outcome-tile{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+      .outcome-tile:last-child{border-bottom:none}
+      .domains-grid{grid-template-columns:repeat(2,1fr)}
+      .process-steps{grid-template-columns:1fr;gap:28px}
+      .process-steps::before{display:none}
+      .process-step{text-align:left;display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:start;padding:0}
+      .process-num{font-size:32px;grid-row:span 2}
+      .process-num::after{display:none}
+      .pricing-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .offering-hero-ctas{flex-direction:column}
+      .offering-hero-ctas .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header id="nav" class="solid" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="MBA Partner home"><span class="nav-wordmark">MBA Partner</span><span class="nav-tagline">Initiative by Alumni of Old IIM</span></a>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html#programs">Programs</a></li><li><a href="index.html#mentors">Mentors</a></li>
+          <li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('Live Projects — ₹4,999')" aria-haspopup="dialog">Enroll Now</button>
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="offering-hero" aria-labelledby="offering-h1">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Programs</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Live Projects</span>
+        </nav>
+        <div class="offering-hero-grid">
+          <div class="offering-copy">
+            <div style="margin-bottom:16px;"><span class="tag-category">Live Project</span></div>
+            <h1 class="h1" id="offering-h1" style="color:var(--navy);margin-bottom:16px;">Real Client Work. Verifiable Output. <span class="text-purple">The CV Point That Actually Gets You Shortlisted.</span></h1>
+            <p class="offering-sub">A graded project engagement through Prodmark Consultants Pvt. Ltd. — a deliverable in your domain you can walk into every interview and discuss in depth. Not a certificate. Not a simulation. A real output.</p>
+            <div class="offering-hero-ctas">
+              <button class="btn btn-primary" onclick="openModal('Live Projects — ₹4,999')" aria-haspopup="dialog">Enroll Now — ₹4,999</button>
+              <button class="btn btn-secondary" onclick="openModal('Mentor Call — Live Projects')" aria-haspopup="dialog">Talk to a Mentor First</button>
+            </div>
+          </div>
+          <aside aria-label="Enrollment details">
+            <div class="enroll-panel">
+              <div style="margin-bottom:16px;"><span class="tag-category">Live Project</span></div>
+              <div class="enroll-price-row"><span class="enroll-price">₹4,999</span></div>
+              <p class="enroll-price-label">Cohort Price · 1 domain · One-time payment</p>
+              <hr class="enroll-divider" />
+              <ul class="enroll-checklist" role="list">
+                <li class="enroll-check-item">Real client engagement through Prodmark Consultants</li>
+                <li class="enroll-check-item">Graded, verifiable project deliverable</li>
+                <li class="enroll-check-item">4–6 weeks project duration</li>
+                <li class="enroll-check-item">Project summary formatted for CV</li>
+                <li class="enroll-check-item">Group mentor guidance throughout</li>
+                <li class="enroll-check-item">Completion certificate (verifiable)</li>
+              </ul>
+              <button class="btn btn-primary enroll-cta" onclick="openModal('Live Projects — ₹4,999')" aria-haspopup="dialog">Reserve My Spot</button>
+              <button class="btn btn-secondary enroll-secondary" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+              <p class="enroll-note">Need 2 domains? Add the second domain for ₹2,999 more. Our team can help you decide.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="outcomes-band" aria-label="What this program delivers">
+      <div class="container">
+        <div class="outcomes-grid">
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">A CV Point That Explains Itself</div>
+            <p class="outcome-tile-desc">Recruiters see "Project Manager — Prodmark Consultants" and can ask about it in depth. Not a generic skill. A named output they can probe, verify, and remember.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Real Client. Real Deliverable. Real Grade.</div>
+            <p class="outcome-tile-desc">This is not a simulation or a case study. Prodmark Consultants Pvt. Ltd. is a real company. Your deliverable is graded by a real client. It can be referenced, verified, and cited.</p>
+          </div>
+          <div class="outcome-tile">
+            <div class="outcome-tile-title">Interview Talking Point — Built In</div>
+            <p class="outcome-tile-desc">By the end, you have a project you can narrate in 2 minutes and defend in 20. The questions "Tell me about a project you worked on" and "What was your biggest challenge?" become easy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="domains-section" aria-labelledby="domains-lp-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Available Domains</p>
+          <h2 id="domains-lp-heading">Choose Your Project Domain</h2>
+          <p>Select the domain that matches your target placement track. Projects are assigned by domain — not randomly.</p>
+        </div>
+        <div class="domains-grid">
+          <div class="domain-card"><div class="domain-icon">S</div><div class="domain-name">Strategy & Consulting</div><p class="domain-desc">Market entry, competitive analysis, operational strategy, growth planning.</p></div>
+          <div class="domain-card"><div class="domain-icon">F</div><div class="domain-name">Finance & Valuation</div><p class="domain-desc">DCF modelling, M&A analysis, financial statement review, sector research.</p></div>
+          <div class="domain-card"><div class="domain-icon">M</div><div class="domain-name">Marketing & GTM</div><p class="domain-desc">Brand strategy, digital GTM, consumer insight, campaign design.</p></div>
+          <div class="domain-card"><div class="domain-icon">O</div><div class="domain-name">Operations & Supply Chain</div><p class="domain-desc">Process optimisation, logistics analysis, demand forecasting.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:24px;">
+          <p style="font-size:14px;color:var(--slate)">Need 2 domains? Add a second project track for <strong style="color:var(--navy)">₹2,999</strong> — enroll in both and get two verifiable CV points from the same cohort period.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">How It Works</p>
+          <h2 id="process-heading">From Enrollment to CV-Ready Output</h2>
+          <p>Four steps. Zero ambiguity about what happens after you pay.</p>
+        </div>
+        <div class="process-steps" role="list">
+          <div class="process-step" role="listitem">
+            <div class="process-num" aria-hidden="true">01</div>
+            <div><div class="process-step-title">Domain Selection & Brief</div><p class="process-step-desc">Choose your domain. Receive your project brief within 48 hours. Introduction to your cohort group and project supervisor.</p></div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-num" aria-hidden="true">02</div>
+            <div><div class="process-step-title">Research & Analysis Phase</div><p class="process-step-desc">3–4 weeks of structured project execution with cohort check-ins and mentor feedback on approach and methodology.</p></div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-num" aria-hidden="true">03</div>
+            <div><div class="process-step-title">Deliverable Submission</div><p class="process-step-desc">Submit your final deliverable to Prodmark Consultants for grading. Feedback provided on output quality and interview positioning.</p></div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-num" aria-hidden="true">04</div>
+            <div><div class="process-step-title">CV Formatting & Certificate</div><p class="process-step-desc">Receive your graded output, project summary formatted for your CV, and a verified completion certificate from Prodmark Consultants.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" aria-labelledby="ideal-lp-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ideal Student Profile</p>
+          <h2 id="ideal-lp-heading">Who This Is For</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="ideal-grid-lp">
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px;">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile A</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"My CV has coursework and committee roles — no project output."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">Recruiters see committee titles and course certifications everywhere. A graded project with a real company name is the fastest way to stand out — and one of the most common gaps in first-year MBA CVs.</p>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px;">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile B</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"I'm switching domains from my pre-MBA work and have no relevant experience."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">An engineer switching to Finance or a sales professional targeting Consulting needs one verifiable output in the new domain. This is the most efficient path to that first data point.</p>
+          </div>
+          <div style="background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:28px;">
+            <div style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px">Profile C</div>
+            <div style="font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3;font-style:italic">"I want something I can discuss for 20 minutes in a competency interview."</div>
+            <p style="font-size:14px;color:var(--slate);line-height:1.6">Competency interviews — "Tell me about a time you analysed a market," "Walk me through a decision you made" — are answered with projects, not coursework. This gives you that project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="test-lp-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Student Outcomes</p>
+          <h2 id="test-lp-heading">Live Project Alumni</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product Management → Media.net</span></div>
+            <blockquote><p class="testimonial-quote">"The Live Project gave me something real to talk about in every interview. I didn't just get the offer — I walked into the room prepared to discuss a specific output in depth."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">SS</div><div><div class="testimonial-name">Shen Shaji</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → JM Financial SIP</span></div>
+            <blockquote><p class="testimonial-quote">"I had no prior finance internship. The Live Project gave me a real valuation output to show. Every Finance recruiter asked about it — it carried the entire interview."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">N</div><div><div class="testimonial-name">Nishant Agarwal</div><div class="testimonial-institution">IIM Ahmedabad</div></div></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Strategy → Kearney Final Placement</span></div>
+            <blockquote><p class="testimonial-quote">"The Kearney interviewer spent 15 minutes on my Live Project alone. It wasn't the project that got me the offer — it was having something specific and real that I could defend under pressure."</p></blockquote>
+            <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">A</div><div><div class="testimonial-name">Aryan Kapoor</div><div class="testimonial-institution">IIM Lucknow</div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" aria-labelledby="pricing-lp-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Enrollment</p>
+          <h2 id="pricing-lp-heading">Choose Your Plan</h2>
+          <p>One domain or two — both run within the same cohort period.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-headline">1 Domain</div>
+            <p class="pricing-sub">Single project track · 4–6 weeks</p>
+            <div class="pricing-amount">₹4,999</div>
+            <p class="pricing-label">One-time cohort price</p>
+            <ul class="pricing-features" role="list">
+              <li class="pricing-feature-item">1 real client project through Prodmark Consultants</li>
+              <li class="pricing-feature-item">Graded deliverable in your chosen domain</li>
+              <li class="pricing-feature-item">Project summary formatted for your CV</li>
+              <li class="pricing-feature-item">Completion certificate (verifiable)</li>
+              <li class="pricing-feature-item">Group mentor guidance throughout</li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal('Live Projects — 1 Domain — ₹4,999')" style="width:100%" aria-haspopup="dialog">Enroll — 1 Domain</button>
+          </div>
+          <div class="pricing-card highlighted">
+            <div style="margin-bottom:10px;"><span class="tag-most-chosen">Best Value</span></div>
+            <div class="pricing-headline">2 Domains</div>
+            <p class="pricing-sub">Two project tracks · Same cohort period</p>
+            <div class="pricing-amount">₹7,998</div>
+            <p class="pricing-label" style="margin-bottom:4px">₹4,999 + ₹2,999 for second domain</p>
+            <p class="pricing-label">Two CV points from one enrollment period</p>
+            <ul class="pricing-features" role="list">
+              <li class="pricing-feature-item">2 real client projects — different domains</li>
+              <li class="pricing-feature-item">2 graded deliverables for your CV</li>
+              <li class="pricing-feature-item">Both formatted as separate CV points</li>
+              <li class="pricing-feature-item">2 verified completion certificates</li>
+              <li class="pricing-feature-item">Group mentor guidance on both tracks</li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal('Live Projects — 2 Domains — ₹7,998')" style="width:100%" aria-haspopup="dialog">Enroll — 2 Domains</button>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <button class="btn btn-secondary" onclick="openModal('Free Career Call — Live Projects')" aria-haspopup="dialog">Not sure which domain? Book a free career call →</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-panel);" id="faq-lp" aria-labelledby="faq-lp-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Questions</p><h2 id="faq-lp-heading">Live Projects — FAQ</h2></div>
+        <div class="faq-grid">
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Is this real client work or a simulation?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Real. Projects are executed through Prodmark Consultants Pvt. Ltd. — an actual registered consulting entity. The deliverable is graded by a real client supervisor, not a simulation evaluator. This is what allows you to list it on your CV as a project engagement rather than a course completion.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">How much time per week does the Live Project require?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">6–10 hours per week for 4–6 weeks. Project work is primarily self-directed with weekly check-ins and mentor feedback. It runs alongside your coursework — scheduled to not conflict with your academic calendar at enrollment.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Can I do 2 domains in the same cohort period?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Yes — both domain tracks run concurrently within the same 4–6 week cohort. You'd be managing two separate project tracks simultaneously. This works well for students targeting Finance and Consulting, for example, where having both domains covered is a genuine advantage.</div></div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Will I be able to verify the project on my CV?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Yes. Prodmark Consultants Pvt. Ltd. is a real registered company. The certificate is issued by Prodmark and the project engagement can be referenced and verified by recruiters who want to confirm it. This is explicitly not a self-issued certificate.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">What happens if I don't complete the project on time?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Project timelines are structured with cohort check-ins specifically to prevent this. If you fall behind, your cohort mentor helps you reprioritise and restructure your output scope. Extensions are granted in exceptional circumstances — contact us directly if you anticipate a timeline issue before it becomes one.</div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false">Should I do Live Projects or the All-In-One Combo?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">If you also need interview prep (mock sessions, domain-specific prep, HR round coaching), the All-In-One Combo covers all three gaps at ₹14,999 — which is less than combining Live Projects + Bootcamp + Case Comp separately. If your only gap is the CV output, the standalone Live Project is the right choice.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-main);" aria-labelledby="related-lp-heading">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Also Available</p><h2 id="related-lp-heading">Related Programs</h2></div>
+        <div class="related-grid">
+          <a href="offering-all-in-one.html" class="related-card"><span class="tag-category">All-In-One Combo</span><div class="related-card-name">Bootcamp + Live Project + Case Comp</div><p class="related-card-desc">If you also need interview prep, this covers all three gaps at a lower combined price.</p><span class="related-card-price">₹14,999</span></a>
+          <a href="offering-bootcamp.html" class="related-card"><span class="tag-category">Bootcamp</span><div class="related-card-name">Placements Bootcamp</div><p class="related-card-desc">Add structured interview prep to your Live Project. 5 domain tracks, 1:1 mock sessions.</p><span class="related-card-price">₹7,999</span></a>
+          <a href="offering-case-comp.html" class="related-card"><span class="tag-category">Case Competition</span><div class="related-card-name">Case Competition Prep</div><p class="related-card-desc">For Consulting and Strategy roles — structured competitive case practice with mentor feedback.</p><span class="related-card-price">₹3,499</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--navy);padding:80px 0;text-align:center;" aria-labelledby="final-cta-lp">
+      <div class="container">
+        <p class="eyebrow" style="color:var(--yellow)">Reserve Your Spot</p>
+        <h2 id="final-cta-lp" style="font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--white);margin:16px auto;max-width:560px;line-height:1.2">Your CV Has a Gap. The Sooner You Close It, the Better.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:36px">The next cohort starts in 2 weeks. Seats are limited by project capacity.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="openModal('Live Projects — ₹4,999')" aria-haspopup="dialog">Enroll Now — ₹4,999</button>
+          <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="nav-wordmark">MBA Partner</div><p>Post-admission, pre-placement career acceleration for current MBA students.</p><div class="footer-social"><a href="#" class="social-link" aria-label="WhatsApp">W</a><a href="#" class="social-link" aria-label="Telegram">T</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Instagram">ig</a></div></div>
+        <div class="footer-col"><h4>Programs</h4><ul><li><a href="offering-all-in-one.html">All-In-One Combo</a></li><li><a href="offering-bootcamp.html">Placements Bootcamp</a></li><li><a href="offering-live-project.html">Live Projects</a></li><li><a href="offering-case-comp.html">Case Competition</a></li><li><a href="offering-certifications.html">Certifications</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#mentors">Mentors</a></li><li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li><li><a href="#">WhatsApp Community</a></li><li><a href="#">Telegram Channel</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
+    </div>
+  </footer>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Live Projects — ₹4,999')" style="width:100%">Enroll Now — ₹4,999</button></div>
+
+  <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Live Projects</p>
+      <form class="modal-form" id="enroll-form" novalidate>
+        <div class="form-group"><label class="form-label" for="modal-name">Full Name</label><input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" /></div>
+        <div class="form-group"><label class="form-label" for="modal-email">Email Address</label><input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" /></div>
+        <div class="form-group"><label class="form-label" for="modal-phone">WhatsApp Number</label><input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" /></div>
+        <div class="form-group"><label class="form-label" for="modal-bschool">B-School</label><input class="form-input" type="text" id="modal-bschool" name="bschool" placeholder="IIM Ahmedabad, FMS Delhi, etc." required /></div>
+        <div class="form-group"><label class="form-label" for="modal-domain">Project Domain</label><select class="form-select" id="modal-domain" name="domain"><option value="">Select your domain</option><option>Strategy &amp; Consulting</option><option>Finance &amp; Valuation</option><option>Marketing &amp; GTM</option><option>Operations &amp; Supply Chain</option></select></div>
+        <button type="submit" class="modal-submit">Reserve My Spot →</button>
+        <p class="modal-note">Our team will reach you on WhatsApp within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modalOverlay=document.getElementById('enroll-modal'),modalCloseBtn=document.getElementById('modal-close-btn'),modalOfferingLabel=document.getElementById('modal-offering-label'),enrollForm=document.getElementById('enroll-form');
+    function openModal(n){modalOfferingLabel.textContent=n||'Live Projects';modalOverlay.classList.add('open');modalOverlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>modalCloseBtn.focus(),50);}
+    function closeModal(){modalOverlay.classList.remove('open');modalOverlay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    modalCloseBtn.addEventListener('click',closeModal);modalOverlay.addEventListener('click',(e)=>{if(e.target===modalOverlay)closeModal();});document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&modalOverlay.classList.contains('open'))closeModal();});
+    enrollForm.addEventListener('submit',(e)=>{e.preventDefault();const name=document.getElementById('modal-name').value.trim(),phone=document.getElementById('modal-phone').value.trim(),offering=modalOfferingLabel.textContent,msg=encodeURIComponent(`Hi, I'm ${name} and I'd like to enroll in: ${offering}. My WhatsApp: ${phone}`);window.open(`https://wa.me/919999999999?text=${msg}`,'_blank');closeModal();});
+    const mt=document.getElementById('mobile-toggle'),nl=document.getElementById('nav-links');
+    mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+    const mcb=document.getElementById('mobile-cta-bar');window.addEventListener('scroll',()=>{if(window.scrollY>400)mcb.classList.add('visible');else mcb.classList.remove('visible');},{passive:true});
+    document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');item.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);});});
+    const pref=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!pref){const s=document.createElement('style');s.textContent=`.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`;document.head.appendChild(s);const els=document.querySelectorAll('.domain-card,.testimonial-card,.related-card,.outcome-tile,.process-step');els.forEach(el=>el.classList.add('reveal'));const obs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.1});els.forEach(el=>obs.observe(el));}
+  </script>
+</body>
+</html>
