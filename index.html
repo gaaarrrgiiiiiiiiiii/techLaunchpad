@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MBA Partner — Programs for MBA Placements</title>
+  <title>MBA Partner - Programs for MBA Placements</title>
   <meta name="description" content="MBA Partner helps current MBA students land Summer Internship Placements and Final Placements through Live Projects, Case Competitions, and a Placements Bootcamp. Founded by alumni of top IIMs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="shared.css" />
 
   <style>
-    /* 01 — STICKY NAV
+    /* 01 - STICKY NAV
     ════════════════════════════════════════════════════════════════ */
     #nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: transparent;
+      background: var(--white);
+      box-shadow: 0 1px 0 var(--hairline);
       transition: background 200ms ease, box-shadow 200ms ease;
     }
     #nav.scrolled {
@@ -75,7 +76,7 @@
     }
 
     /* ════════════════════════════════════════════════════════════════
-       02 — HERO
+       02 - HERO
     ════════════════════════════════════════════════════════════════ */
     .hero-section { background: var(--bg-main); }
     .hero-grid {
@@ -146,6 +147,12 @@
     .hero-img-placeholder svg { opacity: 0.2; }
     .hero-img-placeholder p { color: rgba(255,255,255,0.35); font-size: 13px; text-align: center; }
 
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
     .hero-proof-card {
       position: absolute;
       bottom: -20px;
@@ -156,6 +163,7 @@
       padding: 16px 20px;
       box-shadow: 0 8px 24px rgba(11,27,51,0.12);
       min-width: 200px;
+      animation: floatCard 5s ease-in-out infinite;
     }
     .hero-proof-num {
       
@@ -167,7 +175,7 @@
     .hero-proof-label { font-size: 13px; color: var(--slate); margin-top: 2px; }
 
     /* ════════════════════════════════════════════════════════════════
-       03 — RECRUITER TRUST BAR
+       03 - RECRUITER TRUST BAR
     ════════════════════════════════════════════════════════════════ */
     .trust-bar {
       background: var(--navy-tint);
@@ -217,7 +225,7 @@
     }
 
     /* ════════════════════════════════════════════════════════════════
-       04 — OUTCOME METRICS BAND (dark)
+       04 - OUTCOME METRICS BAND (dark)
     ════════════════════════════════════════════════════════════════ */
     .metrics-band {
       background: var(--navy);
@@ -260,7 +268,7 @@
     }
 
     /* ════════════════════════════════════════════════════════════════
-       05 — GUIDED PATH FINDER
+       05 - GUIDED PATH FINDER
     ════════════════════════════════════════════════════════════════ */
     .path-finder-section { background: var(--bg-panel); }
     .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
@@ -279,6 +287,9 @@
       border-radius: var(--radius-card);
       padding: 36px 28px;
       transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .path-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
     .path-letter {
@@ -296,9 +307,10 @@
       line-height: 1.3;
     }
     .path-benefit { font-size: 14px; color: var(--slate); line-height: 1.6; margin-bottom: 20px; }
+    .path-card .text-link { margin-top: auto; align-self: flex-start; }
 
     /* ════════════════════════════════════════════════════════════════
-       06 — FEATURED PROGRAMS GRID
+       06 - FEATURED PROGRAMS GRID
     ════════════════════════════════════════════════════════════════ */
     .programs-section { background: var(--bg-main); }
     .programs-grid {
@@ -361,7 +373,7 @@
     .program-card .btn { width: 100%; }
 
     /* ════════════════════════════════════════════════════════════════
-       07 — COMPARISON TABLE
+       07 - COMPARISON TABLE
     ════════════════════════════════════════════════════════════════ */
     .comparison-section { background: var(--bg-panel); overflow: hidden; }
     .table-scroll-wrap {
@@ -417,7 +429,7 @@
     .price-cell { font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
 
     /* ════════════════════════════════════════════════════════════════
-       08 — HOW IT WORKS
+       08 - HOW IT WORKS
     ════════════════════════════════════════════════════════════════ */
     .how-section { background: var(--bg-main); }
     .steps-container { position: relative; }
@@ -444,12 +456,13 @@
       z-index: 1;
     }
     .step-num {
-      
-      font-size: 48px;
+      font-size: 32px;
       font-weight: 600;
       color: var(--yellow);
       font-variant-numeric: tabular-nums;
-      line-height: 1;
+      line-height: 72px;
+      width: 72px;
+      height: 72px;
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
@@ -457,27 +470,25 @@
     .step-num::after {
       content: '';
       display: block;
-      width: 48px;
-      height: 48px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       background: var(--bg-main);
       border: 1px solid var(--hairline);
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
       z-index: -1;
     }
     .step-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
     .step-desc { font-size: 14px; color: var(--slate); line-height: 1.6; }
-
     </style>
 </head>
 
 <body>
 
   <!-- ══════════════════════════════════════════
-       01 — STICKY NAV
+       01 - STICKY NAV
   ══════════════════════════════════════════ -->
   <header id="nav" role="banner">
     <div class="container">
@@ -501,7 +512,7 @@
   </header>
 
   <!-- ══════════════════════════════════════════
-       02 — HERO
+       02 - HERO
   ══════════════════════════════════════════ -->
   <main>
   <section class="hero-section" aria-labelledby="hero-h1">
@@ -512,7 +523,7 @@
           <p class="eyebrow hero-eyebrow">For MBA Students Heading Into Placements</p>
           <h1 class="hero-h1" id="hero-h1">Committee Roles Don't Get You&nbsp;Shortlisted. <span class="text-purple">Outcomes Do.</span></h1>
           <p class="hero-sub">
-            Live Projects, Case Competitions, and a Placements Bootcamp — the three
+            Live Projects, Case Competitions, and a Placements Bootcamp - the three
             credentials that turn a thin CV into a shortlist.
           </p>
 
@@ -558,7 +569,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       03 — RECRUITER TRUST BAR
+       03 - RECRUITER TRUST BAR
   ══════════════════════════════════════════ -->
   <div class="trust-bar" aria-label="Recruiters our students work at">
     <div class="container">
@@ -577,7 +588,7 @@
   </div>
 
   <!-- ══════════════════════════════════════════
-       04 — OUTCOME METRICS BAND
+       04 - OUTCOME METRICS BAND
   ══════════════════════════════════════════ -->
   <section class="metrics-band" aria-label="Placement outcome statistics">
     <div class="container">
@@ -603,7 +614,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       05 — GUIDED PATH FINDER
+       05 - GUIDED PATH FINDER
   ══════════════════════════════════════════ -->
   <section class="path-finder-section" aria-labelledby="path-heading">
     <div class="container">
@@ -616,19 +627,19 @@
         <article class="path-card">
           <div class="path-letter">A</div>
           <div class="path-diagnosis">"I have no real project on my CV."</div>
-          <p class="path-benefit">Recruiters see committee work and coursework — no output, no proof of skill. A graded, client-live project is the fastest way to close that gap before placement season.</p>
+          <p class="path-benefit">Recruiters see committee work and coursework - no output, no proof of skill. A graded, client-live project is the fastest way to close that gap before placement season.</p>
           <a href="offering-live-project.html" class="text-link">Explore Live Projects →</a>
         </article>
         <article class="path-card">
           <div class="path-letter">B</div>
           <div class="path-diagnosis">"I freeze in placement interviews."</div>
-          <p class="path-benefit">Domain-specific mock interviews with mentors who sat in the same room as your recruiters. Finance, Consulting, Product, Marketing — chosen before you start, not assigned randomly.</p>
+          <p class="path-benefit">Domain-specific mock interviews with mentors who sat in the same room as your recruiters. Finance, Consulting, Product, Marketing - chosen before you start, not assigned randomly.</p>
           <a href="offering-bootcamp.html" class="text-link">View the Placements Bootcamp →</a>
         </article>
         <article class="path-card">
           <div class="path-letter">C</div>
           <div class="path-diagnosis">"I want the complete package."</div>
-          <p class="path-benefit">One enrollment covers a Live Project, Case Competition preparation, and the full Bootcamp — the same combination most students assemble piecemeal at a higher total cost.</p>
+          <p class="path-benefit">One enrollment covers a Live Project, Case Competition preparation, and the full Bootcamp - the same combination most students assemble piecemeal at a higher total cost.</p>
           <a href="offering-all-in-one.html" class="text-link">See the All-In-One Combo →</a>
         </article>
       </div>
@@ -636,14 +647,14 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       06 — FEATURED PROGRAMS GRID
+       06 - FEATURED PROGRAMS GRID
   ══════════════════════════════════════════ -->
   <section class="programs-section" id="programs" aria-labelledby="programs-heading">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Program Catalog</p>
         <h2 id="programs-heading">Programs Built Around Placement Season</h2>
-        <p>Each program maps to a specific gap in your placement profile — not a generic curriculum.</p>
+        <p>Each program maps to a specific gap in your placement profile - not a generic curriculum.</p>
       </div>
       <div class="programs-grid">
 
@@ -654,7 +665,7 @@
             <span class="tag-most-chosen">Most Chosen</span>
           </div>
           <h3 class="program-name">Bootcamp + Case Comp + Live Project</h3>
-          <p class="program-outcome">The complete placement-prep stack in a single enrollment — Live Project output for your CV, Case Competition practice, and domain-specific mock interviews.</p>
+          <p class="program-outcome">The complete placement-prep stack in a single enrollment - Live Project output for your CV, Case Competition practice, and domain-specific mock interviews.</p>
           <div class="program-meta">
             <span class="meta-item">10–12 weeks</span>
             <span class="meta-dot">·</span>
@@ -697,7 +708,7 @@
             <span class="tag-category">Live Project</span>
           </div>
           <h3 class="program-name">Live Projects</h3>
-          <p class="program-outcome">Real client work delivered through Prodmark Consultants Pvt. Ltd. — a graded, verifiable work output in your domain that sits on your CV as evidence, not a course certificate.</p>
+          <p class="program-outcome">Real client work delivered through Prodmark Consultants Pvt. Ltd. - a graded, verifiable work output in your domain that sits on your CV as evidence, not a course certificate.</p>
           <div class="program-meta">
             <span class="meta-item">4–6 weeks</span>
             <span class="meta-dot">·</span>
@@ -739,7 +750,7 @@
             <span class="tag-category">Certification</span>
           </div>
           <h3 class="program-name">Advanced Excel</h3>
-          <p class="program-outcome">Verifiable Excel credential covering advanced formulas, pivot analysis, financial modeling, and dashboard design — the baseline skill Finance and Consulting recruiters assume.</p>
+          <p class="program-outcome">Verifiable Excel credential covering advanced formulas, pivot analysis, financial modeling, and dashboard design - the baseline skill Finance and Consulting recruiters assume.</p>
           <div class="program-meta">
             <span class="meta-item">2 weeks</span>
             <span class="meta-dot">·</span>
@@ -760,7 +771,7 @@
             <span class="tag-category">Certification</span>
           </div>
           <h3 class="program-name">Power BI</h3>
-          <p class="program-outcome">End-to-end dashboard and reporting skill using Power BI — a direct credential for roles in Consulting, Operations, and Product that require data storytelling beyond Excel.</p>
+          <p class="program-outcome">End-to-end dashboard and reporting skill using Power BI - a direct credential for roles in Consulting, Operations, and Product that require data storytelling beyond Excel.</p>
           <div class="program-meta">
             <span class="meta-item">2 weeks</span>
             <span class="meta-dot">·</span>
@@ -780,7 +791,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       07 — COMPARISON TABLE
+       07 - COMPARISON TABLE
   ══════════════════════════════════════════ -->
   <section class="comparison-section" aria-labelledby="comparison-heading">
     <div class="container">
@@ -805,30 +816,30 @@
             <tr>
               <td class="col-feature" scope="row">Live Project Output (CV)</td>
               <td><span class="check" aria-label="Included">✓</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
               <td><span class="check" aria-label="Included">✓</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
             </tr>
             <tr>
               <td class="col-feature" scope="row">Case Competition Prep</td>
               <td><span class="check" aria-label="Included">✓</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
               <td><span class="check" aria-label="Included">✓</span></td>
             </tr>
             <tr>
               <td class="col-feature" scope="row">Bootcamp Modules (SIP Prep)</td>
               <td><span class="check" aria-label="Included">✓</span></td>
               <td><span class="check" aria-label="Included">✓</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
             </tr>
             <tr>
               <td class="col-feature" scope="row">Mentor 1:1 Sessions</td>
               <td><span class="check" aria-label="Included">✓</span></td>
               <td><span class="check" aria-label="Included">✓</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
-              <td><span class="dash" aria-label="Not included">—</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
+              <td><span class="dash" aria-label="Not included">-</span></td>
             </tr>
             <tr>
               <td class="col-feature" scope="row">Domain Coverage</td>
@@ -861,7 +872,7 @@
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
 
   <!-- ══════════════════════════════════════════
-       08 — HOW IT WORKS
+       08 - HOW IT WORKS
   ══════════════════════════════════════════ -->
   <section class="how-section" aria-labelledby="how-heading">
     <div class="container">
@@ -890,7 +901,7 @@
             <div class="step-num" aria-hidden="true">03</div>
             <div>
               <div class="step-title">Execute &amp; Build</div>
-              <p class="step-desc">Live Project with real client output, Case Competition rounds, and domain Bootcamp modules — all running concurrently with your coursework.</p>
+              <p class="step-desc">Live Project with real client output, Case Competition rounds, and domain Bootcamp modules - all running concurrently with your coursework.</p>
             </div>
           </div>
           <div class="step" role="listitem">
@@ -906,22 +917,20 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       09 — MENTOR CREDIBILITY WALL
+       09 - MENTOR CREDIBILITY WALL
   ══════════════════════════════════════════ -->
   <section class="mentors-section" id="mentors" aria-labelledby="mentors-heading">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Mentors</p>
         <h2 id="mentors-heading">Placed by the Best. Now Mentoring You.</h2>
-        <p>Every mentor placed at a company you are targeting. Credentials first — because they do the persuasive work.</p>
+        <p>Every mentor placed at a company you are targeting. Credentials first - because they do the persuasive work.</p>
       </div>
       <div class="mentors-grid">
 
         <article class="mentor-card">
           <div class="mentor-photo">
-            <div class="mentor-photo-placeholder" aria-hidden="true">
-              <div class="mentor-avatar">AV</div>
-            </div>
+            <img src="aisha.jpg" alt="Aisha Verma">
           </div>
           <div class="mentor-info">
             <div class="mentor-credential">IIM Ahmedabad · ex-Strategy, Accenture</div>
@@ -932,9 +941,7 @@
 
         <article class="mentor-card">
           <div class="mentor-photo">
-            <div class="mentor-photo-placeholder" aria-hidden="true">
-              <div class="mentor-avatar">RS</div>
-            </div>
+            <img src="rohan.jpg" alt="Rohan Sharma">
           </div>
           <div class="mentor-info">
             <div class="mentor-credential">IIM Bangalore · ex-Product, Media.net</div>
@@ -945,9 +952,7 @@
 
         <article class="mentor-card">
           <div class="mentor-photo">
-            <div class="mentor-photo-placeholder" aria-hidden="true">
-              <div class="mentor-avatar">PK</div>
-            </div>
+            <img src="Priya.jpg" alt="Priya Krishnan">
           </div>
           <div class="mentor-info">
             <div class="mentor-credential">IIM Calcutta · ex-Finance, JM Financial</div>
@@ -958,9 +963,7 @@
 
         <article class="mentor-card">
           <div class="mentor-photo">
-            <div class="mentor-photo-placeholder" aria-hidden="true">
-              <div class="mentor-avatar">AM</div>
-            </div>
+            <img src="arjun.jpg" alt="Arjun Mehta">
           </div>
           <div class="mentor-info">
             <div class="mentor-credential">XLRI · ex-Marketing, Reliance Retail</div>
@@ -974,29 +977,29 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       10 — STUDENT OUTCOME STORIES
+       10 - STUDENT OUTCOME STORIES
   ══════════════════════════════════════════ -->
   <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Student Outcomes</p>
         <h2 id="testimonials-heading">The Proof Is in the Placement</h2>
-        <p>Named, specific, verifiable — not anonymous satisfaction scores.</p>
+        <p>Named, specific, verifiable - not anonymous satisfaction scores.</p>
       </div>
 
-      <div class="featured-quote-wrap" aria-label="Featured student outcome">
-        <div class="outcome-badge">
+      <div class="featured-quote-wrap" aria-label="Featured student outcome" style="background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 40px; margin-bottom: 32px; text-align: center;">
+        <div class="outcome-badge" style="margin-bottom: 24px; display: inline-flex;">
           <span class="outcome-badge-text">Product Management → Media.net</span>
         </div>
         <div class="quote-rule" aria-hidden="true"></div>
         <blockquote>
-          <p class="quote-text">"I came from an engineering background with no product experience and genuinely believed I was behind. The Live Project gave me something real to talk about in every interview. I didn't just get the offer — I walked into the room prepared."</p>
+          <p class="quote-text" style="font-size: 20px; font-weight: 500; color: var(--navy); line-height: 1.6; margin-bottom: 24px;">"I came from an engineering background with no product experience and genuinely believed I was behind. The Live Project gave me something real to talk about in every interview. I didn't just get the offer - I walked into the room prepared."</p>
         </blockquote>
-        <div class="quote-attribution">
-          <div class="quote-avatar" aria-hidden="true">SS</div>
+        <div class="quote-attribution" style="display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
+          <div class="testimonial-avatar" aria-hidden="true" style="width: 56px; height: 56px; font-size: 20px;">R</div>
           <div>
-            <div class="quote-author-name">Shen Shaji</div>
-            <div class="quote-author-institution">IIM Bangalore · SIP: Product Management, Media.net</div>
+            <div class="quote-author-name" style="font-weight: 600; color: var(--navy);">Rohan</div>
+            <div class="quote-author-institution" style="font-size: 14px; color: var(--slate);">IIM Bangalore · SIP: Product Management, Media.net</div>
           </div>
         </div>
       </div>
@@ -1008,12 +1011,12 @@
             <span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span>
           </div>
           <blockquote>
-            <p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. Rutuja—IIM Calcutta"</p>
+            <p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. Priya-IIM Calcutta"</p>
           </blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">R</div>
+            <div class="testimonial-avatar" aria-hidden="true">P</div>
             <div>
-              <div class="testimonial-name">Rutuja Patil</div>
+              <div class="testimonial-name">Priya</div>
               <div class="testimonial-institution">IIM Calcutta</div>
             </div>
           </div>
@@ -1024,12 +1027,12 @@
             <span class="outcome-badge-text" style="color:var(--success)">Finance → JM Financial SIP</span>
           </div>
           <blockquote>
-            <p class="testimonial-quote">"I had no prior finance internship. The Live Project gave me a real valuation output to show. Every Finance recruiter asked about it — it carried the entire interview."</p>
+            <p class="testimonial-quote">"I had no prior finance internship. The Live Project gave me a real valuation output to show. Every Finance recruiter asked about it - it carried the entire interview."</p>
           </blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">N</div>
+            <div class="testimonial-avatar" aria-hidden="true">A</div>
             <div>
-              <div class="testimonial-name">Nishant Agarwal</div>
+              <div class="testimonial-name">Arjun</div>
               <div class="testimonial-institution">IIM Ahmedabad</div>
             </div>
           </div>
@@ -1043,9 +1046,9 @@
             <p class="testimonial-quote">"The All-In-One Combo feels expensive until you calculate what you'd spend assembling the same prep separately. Worth every rupee and more. Cohort network alone is still valuable."</p>
           </blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">D</div>
+            <div class="testimonial-avatar" aria-hidden="true">A</div>
             <div>
-              <div class="testimonial-name">Deepika Nair</div>
+              <div class="testimonial-name">Aisha</div>
               <div class="testimonial-institution">FMS Delhi</div>
             </div>
           </div>
@@ -1056,7 +1059,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       11 — FAQ ACCORDION
+       11 - FAQ ACCORDION
   ══════════════════════════════════════════ -->
   <section class="faq-section" id="faq" aria-labelledby="faq-heading">
     <div class="container">
@@ -1066,14 +1069,12 @@
         <p>The seven questions we hear most from students comparing options.</p>
       </div>
       <div class="faq-grid">
-        <div class="faq-col">
-
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
               How much time does this take alongside coursework?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">The Live Project requires 6–10 hours per week for 4–6 weeks. Bootcamp sessions are scheduled around your academic calendar — typically evenings and weekends. The All-In-One Combo is designed to run concurrently, not consecutively, so total additional time per week stays under 12 hours at peak.</div>
+            <div class="faq-answer">The Live Project requires 6–10 hours per week for 4–6 weeks. Bootcamp sessions are scheduled around your academic calendar - typically evenings and weekends. The All-In-One Combo is designed to run concurrently, not consecutively, so total additional time per week stays under 12 hours at peak.</div>
           </div>
 
           <div class="faq-item">
@@ -1081,7 +1082,7 @@
               Can I switch domains after enrolling?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">For the Bootcamp and Live Project, domain selection is confirmed at enrollment because mentor matching and project allocation are immediate. If your placement strategy shifts before the cohort starts, contact us directly — switches are handled case by case within the first 72 hours.</div>
+            <div class="faq-answer">For the Bootcamp and Live Project, domain selection is confirmed at enrollment because mentor matching and project allocation are immediate. If your placement strategy shifts before the cohort starts, contact us directly - switches are handled case by case within the first 72 hours.</div>
           </div>
 
           <div class="faq-item">
@@ -1089,7 +1090,7 @@
               Is there a placement guarantee?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">We do not make a placement guarantee — any platform that does is misrepresenting how campus placements work. What the 98.7% figure reflects is the proportion of our students who landed a role in their chosen domain (not just any offer). The outcome depends on your effort, your college's placement process, and your cohort year's market — all outside our control. Our job is to make sure preparation isn't the reason you don't get shortlisted.</div>
+            <div class="faq-answer">We do not make a placement guarantee - any platform that does is misrepresenting how campus placements work. What the 98.7% figure reflects is the proportion of our students who landed a role in their chosen domain (not just any offer). The outcome depends on your effort, your college's placement process, and your cohort year's market - all outside our control. Our job is to make sure preparation isn't the reason you don't get shortlisted.</div>
           </div>
 
           <div class="faq-item">
@@ -1097,18 +1098,15 @@
               What's the difference between a Live Project and a Case Competition?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">A Live Project is a real client engagement with a verifiable output (a deliverable you can show on your CV and discuss in interviews). A Case Competition is structured practice — high-pressure, time-limited problem solving that builds the analytical and presentation muscle that Consulting and Strategy recruiters test for explicitly. Both serve different gaps; most students who target consulting-adjacent roles need both.</div>
+            <div class="faq-answer">A Live Project is a real client engagement with a verifiable output (a deliverable you can show on your CV and discuss in interviews). A Case Competition is structured practice - high-pressure, time-limited problem solving that builds the analytical and presentation muscle that Consulting and Strategy recruiters test for explicitly. Both serve different gaps; most students who target consulting-adjacent roles need both.</div>
           </div>
-        </div>
-
-        <div class="faq-col">
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
               Do I get 1:1 mentor access, or is it group only?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">The Bootcamp includes scheduled 1:1 mock interview sessions with your matched mentor. The All-In-One Combo includes these plus group workshops and async feedback on Live Project deliverables. The standalone Live Project and Case Competition programs are primarily group-format — 1:1 sessions are not included but can be purchased separately.</div>
+            <div class="faq-answer">The Bootcamp includes scheduled 1:1 mock interview sessions with your matched mentor. The All-In-One Combo includes these plus group workshops and async feedback on Live Project deliverables. The standalone Live Project and Case Competition programs are primarily group-format - 1:1 sessions are not included but can be purchased separately.</div>
           </div>
 
           <div class="faq-item">
@@ -1124,25 +1122,23 @@
               Can I enroll in the All-In-One Combo if SIP season is 3 months away?
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-answer">Yes — 3 months is the ideal enrollment window. It allows the Live Project to complete and be written up for your CV before campus season begins, and leaves 4–6 weeks for mock interview prep. Enrolling at under 6 weeks before placements compresses the Live Project significantly; we recommend the standalone Bootcamp in that case and the Live Project for the next cohort.</div>
+            <div class="faq-answer">Yes - 3 months is the ideal enrollment window. It allows the Live Project to complete and be written up for your CV before campus season begins, and leaves 4–6 weeks for mock interview prep. Enrolling at under 6 weeks before placements compresses the Live Project significantly; we recommend the standalone Bootcamp in that case and the Live Project for the next cohort.</div>
           </div>
-
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════
-       12 — FINAL CTA BAND
+       12 - FINAL CTA BAND
   ══════════════════════════════════════════ -->
   <section class="cta-band" aria-labelledby="cta-heading">
     <div class="container">
       <p class="eyebrow">Enroll Now</p>
       <h2 id="cta-heading">Placement Season Doesn't Wait. Neither Should You.</h2>
-      <p class="sub">The students who land their target domain start preparing before everyone else does.</p>
-      <div class="cta-band-buttons">
+      <p class="sub" style="margin-bottom: 32px;">The students who land their target domain start preparing before everyone else does.</p>
+      <div class="cta-band-buttons" style="margin-bottom: 24px;">
         <button class="btn btn-primary" onclick="openModal('All Programs')" aria-haspopup="dialog">Enroll Now</button>
-        <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog">Book a Free Career Call</button>
+        <button class="btn btn-secondary-light" onclick="openModal('Free Career Call')" aria-haspopup="dialog" style="border: 1px solid var(--purple); background: var(--purple-light);">Book a Free Career Call</button>
       </div>
       <p class="cta-reassurance">Trusted by 5,000+ MBA students · Secure checkout</p>
     </div>
@@ -1150,7 +1146,7 @@
   </main>
 
   <!-- ══════════════════════════════════════════
-       13 — FOOTER
+       13 - FOOTER
   ══════════════════════════════════════════ -->
   <footer aria-label="Site footer">
     <div class="container">
