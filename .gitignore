@@ -1,0 +1,25 @@
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python scripts (dev tooling, not part of submission)
+*.py
+__pycache__/
+
+# Planning / scratch notes (internal only)
+plan.txt
+*.txt
+
+# Temporary / build outputs
+*.tmp
+*.log
+
+# Word docs / raw briefs (not for repo)
+*.docx
+*.doc
+*.pdf
