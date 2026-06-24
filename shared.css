@@ -333,20 +333,20 @@ button:focus-visible,
   height: 80px;
   gap: 24px;
 }
-.nav-brand { display: flex; flex-direction: column; gap: 0px; }
+.nav-brand { display: flex; flex-direction: column; gap: 1px; }
 .nav-wordmark {
   font-family: 'Kodchasan', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: var(--navy);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 .nav-tagline {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--slate);
 }
 .nav-links {
   display: flex;
@@ -359,7 +359,7 @@ button:focus-visible,
   color: var(--navy-body);
   transition: color var(--transition);
 }
-.nav-links a:hover { color: var(--purple); }
+.nav-links a:hover { color: var(--yellow); }
 .nav-mobile-toggle {
   display: none;
   flex-direction: column;
@@ -634,7 +634,7 @@ footer {
   border-radius: var(--radius-card);
   width: 100%;
   max-width: 520px;
-  padding: 40px;
+  padding: 40px; max-height: 90vh; overflow-y: auto;
   position: relative;
   transform: translateY(20px);
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -654,14 +654,14 @@ footer {
   justify-content: center;
   border-radius: 50%;
   background: var(--purple-light);
-  color: var(--purple);
+  color: var(--white);
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
   transition: all var(--transition);
 }
 .modal-close:hover { background: var(--purple); color: var(--white); transform: scale(1.05); }
-.modal-eyebrow { margin-bottom: 8px; display: inline-block; background: var(--purple-light); padding: 4px 12px; border-radius: var(--radius-tag); }
+.modal-eyebrow { margin-bottom: 8px; display: inline-block; background: var(--purple-light); padding: 4px 12px; border-radius: var(--radius-tag); color: var(--white); }
 .modal-title {
   font-family: 'Kodchasan', sans-serif;
   font-size: 28px;
@@ -1020,3 +1020,10 @@ footer {
     right: 16px;
   }
 }
+
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }

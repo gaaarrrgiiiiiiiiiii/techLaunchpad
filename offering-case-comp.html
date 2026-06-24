@@ -71,7 +71,14 @@
       .offering-hero-ctas .btn{width:100%}
       .rounds-grid{grid-template-columns:1fr}
     }
-  </style>
+  
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 <body>
   <header id="nav" class="solid" role="banner">
@@ -212,17 +219,17 @@
         <div class="section-header"><p class="eyebrow">Student Outcomes</p><h2 id="test-cc-heading">Case Comp Alumni</h2></div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Accenture Strategy → Final Placement</span></div>
             <blockquote><p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. Consulting recruiters noticed the difference in how I structured my thinking."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">R</div><div><div class="testimonial-name">Rutuja Patil</div><div class="testimonial-institution">IIM Calcutta</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Kearney → Strategy SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Kearney → Strategy SIP</span></div>
             <blockquote><p class="testimonial-quote">"Round 4 was harder than my actual Kearney interview. When the real thing happened, I already knew what composed felt like - even when I didn't know the answer. That composure is what they hire for."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">V</div><div><div class="testimonial-name">Vikram Sinha</div><div class="testimonial-institution">IIMA</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">BCG Off-Campus → Final Offer</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">BCG Off-Campus → Final Offer</span></div>
             <blockquote><p class="testimonial-quote">"The feedback after each round was the part I didn't expect to be that valuable. My mentor identified a tic in how I framed hypotheses that I'd never noticed - and it was showing up every time."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">S</div><div><div class="testimonial-name">Shreya Iyer</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
           </article>
@@ -247,7 +254,7 @@
             <li class="pricing-feature-item">Completion certificate</li>
           </ul>
           <div class="pricing-cta-row">
-            <button class="btn btn-primary" onclick="openModal('Case Competition Prep - ₹3,499')" style="width:100%" aria-haspopup="dialog">Reserve My Spot - ₹3,499</button>
+            <button class="btn btn-primary" onclick="openModal('Case Competition Prep - ₹3,499')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Reserve My Spot - ₹3,499</button>
             <button class="btn btn-secondary" onclick="openModal('Book Consultation')" style="width:100%" aria-haspopup="dialog">Book Consultation First</button>
           </div>
         </div>
@@ -309,7 +316,7 @@
       <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
     </div>
   </footer>
-  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Case Competition Prep - ₹3,499')" style="width:100%">Enroll Now - ₹3,499</button></div>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Case Competition Prep - ₹3,499')" style="width:100%;margin-top:auto">Enroll Now - ₹3,499</button></div>
 
   <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Case Competition Prep</p>

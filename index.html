@@ -146,6 +146,12 @@
     .hero-img-placeholder svg { opacity: 0.2; }
     .hero-img-placeholder p { color: rgba(255,255,255,0.35); font-size: 13px; text-align: center; }
 
+    
+    @keyframes floatBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
     .hero-proof-card {
       position: absolute;
       bottom: -20px;
@@ -156,6 +162,7 @@
       padding: 16px 20px;
       box-shadow: 0 8px 24px rgba(11,27,51,0.12);
       min-width: 200px;
+      animation: floatBounce 3s ease-in-out infinite;
     }
     .hero-proof-num {
       
@@ -504,7 +511,14 @@
       gap: 16px;
     }
 
-    </style>
+    
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 
 <body>
@@ -572,13 +586,7 @@
 
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-img-wrap">
-            <div class="hero-img-placeholder">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="20" r="12" stroke="white" stroke-width="1.5"/>
-                <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <p>Mentor &amp; Student<br/>Real Setting Photo</p>
-            </div>
+            <img src="image/mentor_student_session.jpg" alt="Mentor and Student" style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
           <div class="hero-proof-card">
             <div class="hero-proof-num">700+</div>
@@ -891,7 +899,14 @@
   </section>
 
   <!-- Screen-reader only utility -->
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 
   <!-- ══════════════════════════════════════════
        08 — HOW IT WORKS
@@ -1106,7 +1121,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">The Live Project requires 6–10 hours per week for 4–6 weeks. Bootcamp sessions are scheduled around your academic calendar — typically evenings and weekends. The All-In-One Combo is designed to run concurrently, not consecutively, so total additional time per week stays under 12 hours at peak.</div>
-
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1114,7 +1129,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">We do not make a placement guarantee — any platform that does is misrepresenting how campus placements work. What the 98.7% figure reflects is the proportion of our students who landed a role in their chosen domain (not just any offer). The outcome depends on your effort, your college's placement process, and your cohort year's market — all outside our control. Our job is to make sure preparation isn't the reason you don't get shortlisted.</div>
-
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1122,7 +1137,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">The Bootcamp includes scheduled 1:1 mock interview sessions with your matched mentor. The All-In-One Combo includes these plus group workshops and async feedback on Live Project deliverables. The standalone Live Project and Case Competition programs are primarily group-format — 1:1 sessions are not included but can be purchased separately.</div>
-
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1130,9 +1145,9 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">Yes — 3 months is the ideal enrollment window. It allows the Live Project to complete and be written up for your CV before campus season begins, and leaves 4–6 weeks for mock interview prep. Enrolling at under 6 weeks before placements compresses the Live Project significantly; we recommend the standalone Bootcamp in that case and the Live Project for the next cohort.</div>
+          </div>
         </div>
         <div class="faq-col">
-
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1140,7 +1155,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">For the Bootcamp and Live Project, domain selection is confirmed at enrollment because mentor matching and project allocation are immediate. If your placement strategy shifts before the cohort starts, contact us directly — switches are handled case by case within the first 72 hours.</div>
-
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1148,7 +1163,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">A Live Project is a real client engagement with a verifiable output (a deliverable you can show on your CV and discuss in interviews). A Case Competition is structured practice — high-pressure, time-limited problem solving that builds the analytical and presentation muscle that Consulting and Strategy recruiters test for explicitly. Both serve different gaps; most students who target consulting-adjacent roles need both.</div>
-
+          </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -1156,6 +1171,7 @@
               <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">You receive a confirmation email with your cohort start date and a link to the onboarding form (domain selection, B-school, placement timeline). Within 48 hours you are added to the cohort WhatsApp group, introduced to your cohort mentor, and given access to the pre-cohort resource pack. The first live session is typically within 5–7 days of enrollment.</div>
+          </div>
         </div>
       </div>
     </div>

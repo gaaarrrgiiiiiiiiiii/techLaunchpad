@@ -46,14 +46,14 @@
     .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
     .process-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);height:1px;background:var(--hairline);z-index:0}
     .process-step{padding:0 20px;text-align:center;position:relative;z-index:1}
-    .process-num{font-size:40px;font-weight:600;color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:16px;display:inline-block;position:relative}
-    .process-num::after{content:'';display:block;width:44px;height:44px;border-radius:50%;background:var(--bg-main);border:1px solid var(--hairline);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1}
+    .process-num{font-size:36px;font-weight:600;color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:20px;display:inline-block;position:relative}
+    .process-num::after{content:'';display:block;width:80px;height:80px;border-radius:50%;background:var(--bg-main);border:2px solid var(--navy);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1}
     .process-step-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
     .process-step-desc{font-size:13px;color:var(--slate);line-height:1.6}
 
     .pricing-section{background:var(--bg-main)}
     .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto}
-    .pricing-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px}
+    .pricing-card{background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);padding:32px;display:flex;flex-direction:column;height:100%;}
     .pricing-card.highlighted{border-color:var(--yellow)}
     .pricing-headline{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:8px}
     .pricing-sub{font-size:14px;color:var(--slate);margin-bottom:20px}
@@ -82,7 +82,14 @@
       .offering-hero-ctas{flex-direction:column}
       .offering-hero-ctas .btn{width:100%}
     }
-  </style>
+  
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 <body>
   <header id="nav" class="solid" role="banner">
@@ -238,17 +245,17 @@
         </div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product Management → Media.net</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Product Management → Media.net</span></div>
             <blockquote><p class="testimonial-quote">"The Live Project gave me something real to talk about in every interview. I didn't just get the offer - I walked into the room prepared to discuss a specific output in depth."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">SS</div><div><div class="testimonial-name">Shen Shaji</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → JM Financial SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Finance → JM Financial SIP</span></div>
             <blockquote><p class="testimonial-quote">"I had no prior finance internship. The Live Project gave me a real valuation output to show. Every Finance recruiter asked about it - it carried the entire interview."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">N</div><div><div class="testimonial-name">Nishant Agarwal</div><div class="testimonial-institution">IIM Ahmedabad</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Strategy → Kearney Final Placement</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Strategy → Kearney Final Placement</span></div>
             <blockquote><p class="testimonial-quote">"The Kearney interviewer spent 15 minutes on my Live Project alone. It wasn't the project that got me the offer - it was having something specific and real that I could defend under pressure."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">A</div><div><div class="testimonial-name">Aryan Kapoor</div><div class="testimonial-institution">IIM Lucknow</div></div></div>
           </article>
@@ -276,7 +283,7 @@
               <li class="pricing-feature-item">Completion certificate (verifiable)</li>
               <li class="pricing-feature-item">Group mentor guidance throughout</li>
             </ul>
-            <button class="btn btn-primary" onclick="openModal('Live Projects - 1 Domain - ₹4,999')" style="width:100%" aria-haspopup="dialog">Enroll - 1 Domain</button>
+            <button class="btn btn-primary" onclick="openModal('Live Projects - 1 Domain - ₹4,999')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Enroll - 1 Domain</button>
           </div>
           <div class="pricing-card highlighted">
             <div style="margin-bottom:10px;"><span class="tag-most-chosen">Best Value</span></div>
@@ -292,7 +299,7 @@
               <li class="pricing-feature-item">2 verified completion certificates</li>
               <li class="pricing-feature-item">Group mentor guidance on both tracks</li>
             </ul>
-            <button class="btn btn-primary" onclick="openModal('Live Projects - 2 Domains - ₹7,998')" style="width:100%" aria-haspopup="dialog">Enroll - 2 Domains</button>
+            <button class="btn btn-primary" onclick="openModal('Live Projects - 2 Domains - ₹7,998')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Enroll - 2 Domains</button>
           </div>
         </div>
         <div style="text-align:center;margin-top:32px;">
@@ -354,7 +361,7 @@
       <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
     </div>
   </footer>
-  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Live Projects - ₹4,999')" style="width:100%">Enroll Now - ₹4,999</button></div>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('Live Projects - ₹4,999')" style="width:100%;margin-top:auto">Enroll Now - ₹4,999</button></div>
 
   <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Live Projects</p>

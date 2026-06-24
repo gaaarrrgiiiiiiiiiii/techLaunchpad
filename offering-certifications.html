@@ -60,7 +60,14 @@
       .hero-ctas{flex-direction:column}
       .hero-ctas .btn{width:100%}
     }
-  </style>
+  
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 <body>
   <header id="nav" class="solid" role="banner">
@@ -221,17 +228,17 @@
         <div class="section-header"><p class="eyebrow">Student Outcomes</p><h2 id="test-cert-heading">Certification Alumni</h2></div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → KPMG Final Placement</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Finance → KPMG Final Placement</span></div>
             <blockquote><p class="testimonial-quote">"The Excel certification was worth it for the pre-placement test alone. KPMG ran a 45-minute Excel assessment in round 1. I was the only person in my cohort who'd practised that format specifically."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">M</div><div><div class="testimonial-name">Mihir Joshi</div><div class="testimonial-institution">IIM Indore</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product → Razorpay SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Product → Razorpay SIP</span></div>
             <blockquote><p class="testimonial-quote">"The SQL cert was the one I thought was optional. The Razorpay PM interview included a data question where being able to write a basic query and explain the output was the difference between a yes and a no."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">T</div><div><div class="testimonial-name">Tanvi Reddy</div><div class="testimonial-institution">IIM Bangalore</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Operations → Amazon SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Operations → Amazon SIP</span></div>
             <blockquote><p class="testimonial-quote">"Power BI was something I'd mentioned as a skill on my CV without actually being able to build a dashboard from scratch. This made it honest. The certificate was secondary to actually knowing it."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">K</div><div><div class="testimonial-name">Karthik Menon</div><div class="testimonial-institution">XLRI</div></div></div>
           </article>
@@ -264,7 +271,7 @@
             <li class="bundle-feature">6–8 hours per week total across all three programs</li>
           </ul>
           <div class="bundle-cta-row">
-            <button class="btn btn-primary" onclick="openModal('All 3 Certifications Bundle - ₹3,499')" style="width:100%" aria-haspopup="dialog">Enroll in All 3 - ₹3,499</button>
+            <button class="btn btn-primary" onclick="openModal('All 3 Certifications Bundle - ₹3,499')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Enroll in All 3 - ₹3,499</button>
             <button class="btn btn-secondary" onclick="openModal('Single Certification')" style="width:100%" aria-haspopup="dialog">Enroll in 1 Certification Instead</button>
           </div>
         </div>
@@ -325,7 +332,7 @@
       <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
     </div>
   </footer>
-  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('All 3 Certifications - ₹3,499')" style="width:100%">Get All 3 Certs - ₹3,499</button></div>
+  <div id="mobile-cta-bar" role="complementary"><button class="btn btn-primary" onclick="openModal('All 3 Certifications - ₹3,499')" style="width:100%;margin-top:auto">Get All 3 Certs - ₹3,499</button></div>
 
   <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Certifications</p>

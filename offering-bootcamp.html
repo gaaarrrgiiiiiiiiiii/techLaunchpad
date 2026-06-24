@@ -88,7 +88,14 @@
       .offering-hero-ctas .btn { width:100%; }
       .domains-grid { grid-template-columns:1fr 1fr; }
     }
-  </style>
+  
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 <body>
   <header id="nav" class="solid" role="banner">
@@ -313,17 +320,17 @@
         </div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Accenture Strategy → Final Placement</span></div>
             <blockquote><p class="testimonial-quote">"The case competition prep was the difference. I went from blanking on frameworks to structuring answers in real time. The mock sessions made the real interview feel familiar."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">R</div><div><div class="testimonial-name">Rutuja Patil</div><div class="testimonial-institution">IIM Calcutta</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Finance → JM Financial SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Finance → JM Financial SIP</span></div>
             <blockquote><p class="testimonial-quote">"My mentor knew exactly what JM Financial asks in technicals. After three mock sessions, I was answering questions I'd never even practised before - because I understood the framework, not just the answer."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">N</div><div><div class="testimonial-name">Nishant Agarwal</div><div class="testimonial-institution">IIM Ahmedabad</div></div></div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Marketing → Reliance Retail SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Marketing → Reliance Retail SIP</span></div>
             <blockquote><p class="testimonial-quote">"I was surprised how much the HR round prep mattered. I'd assumed I'd handle that naturally. The Bootcamp showed me exactly where I was losing offers I thought I'd already won."</p></blockquote>
             <div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">D</div><div><div class="testimonial-name">Deepika Nair</div><div class="testimonial-institution">FMS Delhi</div></div></div>
           </article>
@@ -353,7 +360,7 @@
             <li class="pricing-feature-item">Placement season support (mentor available through your season)</li>
           </ul>
           <div class="pricing-cta-row">
-            <button class="btn btn-primary" onclick="openModal('Placements Bootcamp - ₹7,999')" style="width:100%" aria-haspopup="dialog">Reserve My Spot - ₹7,999</button>
+            <button class="btn btn-primary" onclick="openModal('Placements Bootcamp - ₹7,999')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Reserve My Spot - ₹7,999</button>
             <button class="btn btn-secondary" onclick="openModal('Book Consultation')" style="width:100%" aria-haspopup="dialog">Book Consultation First</button>
           </div>
         </div>
@@ -483,7 +490,7 @@
   </footer>
 
   <div id="mobile-cta-bar" aria-label="Persistent enroll button" role="complementary">
-    <button class="btn btn-primary" onclick="openModal('Placements Bootcamp - ₹7,999')" style="width:100%">Enroll Now - ₹7,999</button>
+    <button class="btn btn-primary" onclick="openModal('Placements Bootcamp - ₹7,999')" style="width:100%;margin-top:auto">Enroll Now - ₹7,999</button>
   </div>
 
   <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">

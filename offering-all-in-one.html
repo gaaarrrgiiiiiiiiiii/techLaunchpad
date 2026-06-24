@@ -256,7 +256,14 @@
       .offering-hero-ctas { flex-direction: column; }
       .offering-hero-ctas .btn { width: 100%; }
     }
-  </style>
+  
+/* Modal Scrollbar Fix */
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: transparent; margin: 16px; border-radius: 16px; }
+.modal::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.15); border-radius: 8px; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,0.3); }
+.modal { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+</style>
 </head>
 <body>
 
@@ -492,7 +499,7 @@
         </div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Marketing → Reliance Retail SIP</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Marketing → Reliance Retail SIP</span></div>
             <blockquote><p class="testimonial-quote">"The All-In-One Combo feels expensive until you calculate what you'd spend assembling the same prep separately. Worth every rupee. The cohort network alone is still valuable two years later."</p></blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">D</div>
@@ -500,7 +507,7 @@
             </div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Product Management → Media.net</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Product Management → Media.net</span></div>
             <blockquote><p class="testimonial-quote">"I came from engineering with no product experience and genuinely believed I was behind. The Live Project gave me something real to talk about in every interview. I walked in prepared."</p></blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">SS</div>
@@ -508,7 +515,7 @@
             </div>
           </article>
           <article class="testimonial-card">
-            <div class="outcome-badge" style="background:rgba(30,92,74,0.07);border-color:rgba(30,92,74,0.2)"><span class="outcome-badge-text" style="color:var(--success)">Accenture Strategy → Final Placement</span></div>
+            <div class="outcome-badge"><span class="outcome-badge-text">Accenture Strategy → Final Placement</span></div>
             <blockquote><p class="testimonial-quote">"The case competition prep was the difference between blanking on frameworks and structuring answers in real time. Consulting recruiters noticed the difference in how I structured my thinking."</p></blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar" aria-hidden="true">R</div>
@@ -546,7 +553,7 @@
             <li class="pricing-feature-item">Runs concurrent with coursework · ~10–12 hrs/week at peak</li>
           </ul>
           <div class="pricing-cta-row">
-            <button class="btn btn-primary" onclick="openModal('All-In-One Combo - ₹14,999')" style="width:100%" aria-haspopup="dialog">Reserve My Spot - ₹14,999</button>
+            <button class="btn btn-primary" onclick="openModal('All-In-One Combo - ₹14,999')" style="width:100%;margin-top:auto" aria-haspopup="dialog">Reserve My Spot - ₹14,999</button>
             <button class="btn btn-secondary" onclick="openModal('Book Consultation')" style="width:100%" aria-haspopup="dialog">Book Consultation First</button>
           </div>
         </div>
@@ -713,7 +720,7 @@
 
   <!-- MOBILE CTA -->
   <div id="mobile-cta-bar" aria-label="Persistent enroll button" role="complementary">
-    <button class="btn btn-primary" onclick="openModal('All-In-One Combo - ₹14,999')" style="width:100%">Enroll Now - ₹14,999</button>
+    <button class="btn btn-primary" onclick="openModal('All-In-One Combo - ₹14,999')" style="width:100%;margin-top:auto">Enroll Now - ₹14,999</button>
   </div>
 
   <!-- ENROLLMENT MODAL -->
