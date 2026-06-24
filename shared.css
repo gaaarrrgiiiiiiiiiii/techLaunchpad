@@ -409,6 +409,12 @@ button:focus-visible,
   align-items: center;
   justify-content: center;
 }
+.mentor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 .mentor-photo-placeholder {
   width: 100%;
   height: 100%;
