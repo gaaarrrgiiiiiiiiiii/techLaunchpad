@@ -7,7 +7,7 @@
   <meta name="description" content="Advanced Excel, Power BI, and SQL certification programs for MBA students. Add verifiable technical proficiency to your CV in 4 weeks. Graded assessments, not just participation certificates." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <style>
     .offering-hero{padding:120px 0 80px;background:var(--bg-main)}
@@ -320,7 +320,7 @@
         <div class="footer-brand"><div class="nav-wordmark">MBA Partner</div><p>Post-admission, pre-placement career acceleration for current MBA students.</p><div class="footer-social"><a href="#" class="social-link" aria-label="WhatsApp">W</a><a href="#" class="social-link" aria-label="Telegram">T</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Instagram">ig</a></div></div>
         <div class="footer-col"><h4>Programs</h4><ul><li><a href="offering-all-in-one.html">All-In-One Combo</a></li><li><a href="offering-bootcamp.html">Placements Bootcamp</a></li><li><a href="offering-live-project.html">Live Projects</a></li><li><a href="offering-case-comp.html">Case Competition</a></li><li><a href="offering-certifications.html">Certifications</a></li></ul></div>
         <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#mentors">Mentors</a></li><li><a href="index.html#testimonials">Outcomes</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li><li><a href="#">WhatsApp Community</a></li><li><a href="#">Telegram Channel</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@mbapartner.in">hello@mbapartner.in</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Telegram Channel</a></li></ul></div>
       </div>
       <div class="footer-bottom"><p>© 2024 MBA Partner. All rights reserved.</p><nav class="footer-legal" aria-label="Legal links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></nav></div>
     </div>
@@ -329,7 +329,7 @@
 
   <div id="enroll-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal"><button class="modal-close" id="modal-close-btn" aria-label="Close enrollment form">✕</button><p class="eyebrow modal-eyebrow">Get Started</p><h2 class="modal-title" id="modal-title">Reserve Your Spot</h2><p class="modal-offering-name" id="modal-offering-label">Certifications</p>
-      <form class="modal-form" id="enroll-form" novalidate>
+      <form class="modal-form" id="enroll-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc_DUMMY_ID/formResponse" method="POST" target="_blank">
         <div class="form-group"><label class="form-label" for="modal-name">Full Name</label><input class="form-input" type="text" id="modal-name" name="name" placeholder="Your full name" required autocomplete="name" /></div>
         <div class="form-group"><label class="form-label" for="modal-email">Email Address</label><input class="form-input" type="email" id="modal-email" name="email" placeholder="you@college.edu" required autocomplete="email" /></div>
         <div class="form-group"><label class="form-label" for="modal-phone">WhatsApp Number</label><input class="form-input" type="tel" id="modal-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" /></div>
@@ -358,6 +358,84 @@
     const mcbar=document.getElementById('mobile-cta-bar');window.addEventListener('scroll',()=>{if(window.scrollY>400)mcbar.classList.add('visible');else mcbar.classList.remove('visible');},{passive:true});
     document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');item.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);});});
     const pref=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!pref){const s=document.createElement('style');s.textContent=`.reveal{opacity:0;transform:translateY(14px);transition:opacity 300ms ease,transform 300ms ease}.reveal.visible{opacity:1;transform:none}`;document.head.appendChild(s);const els=document.querySelectorAll('.cert-card,.why-card,.testimonial-card,.related-card');els.forEach(el=>el.classList.add('reveal'));const obs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.1});els.forEach(el=>obs.observe(el));}
+  </script>
+
+  <!-- ══════════════════════════════════════════
+       CHATBOT (Phase 5)
+  ══════════════════════════════════════════ -->
+  <button class="chatbot-trigger" id="chatbot-trigger" aria-label="Open chat" aria-haspopup="dialog" aria-expanded="false">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/></svg>
+  </button>
+
+  <div class="chatbot-popup" id="chatbot-popup" role="dialog" aria-label="Chat assistant" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-header-title">MBA Partner Guide</div>
+      <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-message">Hi! I'm here to help you navigate our programs and find the best fit for your CV gaps. How can I help?</div>
+    </div>
+    <div class="chat-suggested-questions">
+      <div class="chat-suggested-title">Suggested Questions</div>
+      <button class="chat-suggestion-btn">Which program should I choose?</button>
+      <button class="chat-suggestion-btn">Tell me about Live Projects</button>
+      <button class="chat-suggestion-btn">How do placements work?</button>
+      <button class="chat-suggestion-btn">What certifications are available?</button>
+    </div>
+  </div>
+
+  <script>
+    const cbTrigger = document.getElementById('chatbot-trigger'),
+          cbPopup = document.getElementById('chatbot-popup'),
+          cbClose = document.getElementById('chatbot-close'),
+          cbMessages = document.getElementById('chat-messages');
+
+    function toggleChat() {
+      const isOpen = cbPopup.classList.contains('open');
+      if (isOpen) {
+        cbPopup.classList.remove('open');
+        cbPopup.setAttribute('aria-hidden', 'true');
+        cbTrigger.setAttribute('aria-expanded', 'false');
+      } else {
+        cbPopup.classList.add('open');
+        cbPopup.setAttribute('aria-hidden', 'false');
+        cbTrigger.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    cbTrigger.addEventListener('click', toggleChat);
+    cbClose.addEventListener('click', toggleChat);
+
+    document.querySelectorAll('.chat-suggestion-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const question = e.target.textContent;
+        const userMsg = document.createElement('div');
+        userMsg.className = 'chat-message user';
+        userMsg.textContent = question;
+        cbMessages.appendChild(userMsg);
+        cbMessages.scrollTop = cbMessages.scrollHeight;
+
+        setTimeout(() => {
+          const replyMsg = document.createElement('div');
+          replyMsg.className = 'chat-message';
+          
+          if (question.includes('choose')) {
+            replyMsg.textContent = "If you need a CV point, go for Live Projects. If you also need interview prep, the All-In-One Combo is best.";
+          } else if (question.includes('Live Projects')) {
+            replyMsg.textContent = "Live Projects offer real client work via Prodmark Consultants. You'll get a graded, verifiable project output for your CV.";
+          } else if (question.includes('placements')) {
+            replyMsg.textContent = "We don't guarantee placements, but our credentials give you the talking points and CV weight needed to pass shortlists and ace interviews.";
+          } else if (question.includes('certifications')) {
+            replyMsg.textContent = "We offer domain-specific certifications designed to add hard skills to your CV, complementing your MBA coursework.";
+          } else {
+            replyMsg.textContent = "Please book a free career call for detailed guidance!";
+          }
+          
+          cbMessages.appendChild(replyMsg);
+          cbMessages.scrollTop = cbMessages.scrollHeight;
+        }, 600);
+      });
+    });
   </script>
 </body>
 </html>
